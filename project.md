@@ -38,6 +38,7 @@
 
 ### Gracz
 
+* Rzuca kością
 * Decyduje, którego pionka ruszyć
 * Decyduje czy wprowadzić nowego pionka do gry, czy rzucać dalej (wyrzucenie szóstki)
 
@@ -50,5 +51,24 @@
 * Pilnuje czyja jest tura i informuje o tym plansze
 * Pyta gracza o decyzje
 * Zajmuje sie przesuwaniem pionków
+* Losuje wynik rzutu kością
+* Sprawdza czy pionek wykonał pełne okrążenie, jeśli tak przenosi pionek do "domku"
 * Sprawdza czy ruch użytkownika jest dozwolony
 * Sprawdza czy gra się skończyła (czy wszystkie pionki, któregoś gracza dotarły do "domku")
+
+# TO-DO
+- [ ] Klasa Plansza (najpierw w wersji konsolowej), klasa Pole
+- [ ] Klasa Pionek i algorytm przesuwania pionka (z pionkiem zaczynającym od razu na planszy)
+- [ ] Klasa Gra i przeniesienie algorytmu przesuwania pionka do niej
+- [ ] Klasa Gracz, implementacja petli gry oraz komunikacji Gra<->Gracz 
+- [ ] Obsluga wielu graczy (pionki różnych kolorów oraz komunikacja klasy Gry z każdym z graczy osobno)
+- [ ] Dodanie schowka, pól startowych, "domków" do planszy
+- [ ] Dodanie sekwencji startowej - wszystkie pionki startują w schowku, gracze rzucają trzy razy aż do wylosowania szóstki żeby wystawić pionek
+- [ ] Obsługa "domków" 
+- [ ] Obsługa wylosowania szóstki - możliwość wystawiania kolejnych pionków na planszę oraz sumowanie rzutów
+- [ ] Obsługa wyboru, którego pionka ruszyć
+- [ ] Obsługa zbijania pionków i blokada ruchu pionkiem, jeśli będzie skutkował staniem dwóch pionków tego samego koloru na tym samym polu
+- [ ] Obsługa trzykrotnego rzutu kością w przypadku, kiedy gracz nie ma wystawionych pionków na planszy
+- [ ] Przerobienie klasy Plansza do SFML
+- [ ] Interakcja Plansza<->Użytkownik
+- [ ] Napisanie algorytmu, który może podejmować decyzje w ramach klasy Gracz
