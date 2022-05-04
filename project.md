@@ -14,3 +14,41 @@
 * Wygrywa gracz, który jako pierwszy doprowadzi cztery pionki do "domku"
 
 ## Klasy
+
+### Plansza
+
+* Zawiera tablice wszystkich pól i pionków
+* Zawiera informacje o polu startowym każdego gracza
+* Wyświetla pola oraz pionki
+* Wyświetla komunikaty (czyja jest tura lub możliwe decyzje)
+* Wyświetla rezultat rzutu kością
+
+### Pole
+
+* Zawiera informacje o swojej pozycji na ekranie
+* Zawiera wskaźnik na kolejne pole
+* Zawiera wskaznik na pionek, ktory stoi na tym polu (lub informacje że pole jest puste)
+* Jezeli jest schowkiem lub "domkiem", zachowuje przypisany mu pionek (żeby w przypadku zbicia, szybko go przenieść na to pole)
+* Informuje planszę, kiedy użytkownik kliknie dane pole
+
+### Pionek
+
+* Zawiera informacje do którego gracza należy
+* Zawiera informacje na którym polu stoi
+
+### Gracz
+
+* Decyduje, którego pionka ruszyć
+* Decyduje czy wprowadzić nowego pionka do gry, czy rzucać dalej (wyrzucenie szóstki)
+
+### AI
+
+* Zastępuje klasę gracz i podejmuje decyzje na podstawie algorytmu
+
+### Gra
+
+* Pilnuje czyja jest tura i informuje o tym plansze
+* Pyta gracza o decyzje
+* Zajmuje sie przesuwaniem pionków
+* Sprawdza czy ruch użytkownika jest dozwolony
+* Sprawdza czy gra się skończyła (czy wszystkie pionki, któregoś gracza dotarły do "domku")
