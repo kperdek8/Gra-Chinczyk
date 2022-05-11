@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1652277366 source:c:\users\student\documents\chinczyk\main.cpp
+	<iostream>
+	<Plansza.h>
+
+1652278914 source:c:\users\student\documents\chinczyk\src\plansza.cpp
+	"Plansza.h"
+	<string>
+	<iostream>
+
+1652278226 c:\users\student\documents\chinczyk\include\plansza.h
+	"Pole.h"
+	<vector>
+
+1652279492 c:\users\student\documents\chinczyk\include\pole.h
+
+1652279516 source:c:\users\student\documents\chinczyk\src\pole.cpp
+	"Pole.h"
+
