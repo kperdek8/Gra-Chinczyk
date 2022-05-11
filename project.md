@@ -19,6 +19,7 @@
 
 * Zawiera tablice wszystkich pól i pionków
 * Zawiera informacje o polu startowym każdego gracza
+* Zawiera informacje o polach tworzących "domek" każdego gracza
 * Wyświetla pola oraz pionki
 * Wyświetla komunikaty (czyja jest tura lub możliwe decyzje)
 * Wyświetla rezultat rzutu kością
@@ -28,14 +29,13 @@
 * Zawiera informacje o swojej pozycji na ekranie
 * Zawiera wskaźnik na kolejne pole
 * Zawiera wskaznik na pionek, ktory stoi na tym polu (lub informacje że pole jest puste)
-* Jezeli jest schowkiem lub "domkiem", zachowuje przypisany mu pionek (żeby w przypadku zbicia, szybko go przenieść na to pole)
 * Informuje planszę, kiedy użytkownik kliknie dane pole
 
 ### Pionek
 
 * Zawiera informacje do którego gracza należy
 * Zawiera informacje na którym polu stoi
-
+* Zawiera wskaźnik na swoje pole domyślne (na które wraca po zbiciu)
 ### Gracz
 
 * Rzuca kością
