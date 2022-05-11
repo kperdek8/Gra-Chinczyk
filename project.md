@@ -27,6 +27,7 @@
 ### Pole
 
 * Zawiera informacje o swojej pozycji na ekranie
+* Zawiera informacje o swoim kolorze
 * Zawiera wskaźnik na kolejne pole
 * Zawiera wskaznik na pionek, ktory stoi na tym polu (lub informacje że pole jest puste)
 * Informuje planszę, kiedy użytkownik kliknie dane pole
