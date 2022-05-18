@@ -1,5 +1,8 @@
 #include "Plansza.h"
+
 #include <string>
+#include <time.h>
+#include <stdlib.h>
 #include <iostream>
 /*
 
@@ -18,11 +21,11 @@ yy  #y#  gg
 yy  y##  gg
 */
 
-
 Plansza::Plansza()
 {
     polaStartowe.resize(4);
     schowki.resize(4);
+    obrazPlanszy.resize(11);
 
     Pole* pierwszyInit = nullptr; //Wskaznik sluzacy do polaczenia na koncu inicjalizacji pierwszego i ostatniego pola
     Pole* pole = nullptr; //Wskaznik ktoremu beda przypisywane inicjalizowane pola, ktore nastepnie trafia do wektora.
@@ -34,6 +37,12 @@ Plansza::Plansza()
             pole = new Pole(i,k,czerwony);
             pola.push_back(pole);
             schowki.at(czerwony).push_back(pole);
+
+
+            Pionek* pionek = new Pionek(czerwony,pole);
+            pionki.push_back(pionek);
+
+            pole->postawPionek(pionek);
         }
     }
 
@@ -44,6 +53,11 @@ Plansza::Plansza()
             pole = new Pole(i,k,niebieski);
             pola.push_back(pole);
             schowki.at(niebieski).push_back(pole);
+
+            Pionek* pionek = new Pionek(niebieski,pole);
+            pionki.push_back(pionek);
+
+            pole->postawPionek(pionek);
         }
     }
 
@@ -54,6 +68,11 @@ Plansza::Plansza()
             pole = new Pole(i,k,zolty);
             pola.push_back(pole);
             schowki.at(zolty).push_back(pole);
+
+            Pionek* pionek = new Pionek(zolty,pole);
+            pionki.push_back(pionek);
+
+            pole->postawPionek(pionek);
         }
     }
 
@@ -64,6 +83,11 @@ Plansza::Plansza()
             pole = new Pole(i,k,zielony);
             pola.push_back(pole);
             schowki.at(zielony).push_back(pole);
+
+            Pionek* pionek = new Pionek(zielony,pole);
+            pionki.push_back(pionek);
+
+            pole->postawPionek(pionek);
         }
     }
 
@@ -218,56 +242,118 @@ Plansza::Plansza()
 
     pole = new Pole(5,0,brak,poprzedInit,pierwszyInit); // pole (5,0)
     pola.push_back(pole);
+
     poprzedInit->wskKolejny = pole;
-    pierwszyInit->wskPoprzedni = pole;
+    pierwszyInit->wskPoprzedni = pole; //Laczenie ostatniego i pierwsze pola
+
+    //Do testowania
+    Pionek* pionek = new Pionek(czerwony,polaStartowe.at(czerwony));
+    testowyPionek = pionek;
+    polaStartowe.at(czerwony)->postawPionek(pionek);
+
 }
 
 Plansza::~Plansza()
 {
-    //dtor
+    for(int i = 0; i<pola.size(); i++)
+    {
+        delete pola.at(i);
+    }
+}
+
+char przypiszKolor(kolor kolorPola)
+{
+    switch(kolorPola)
+    {
+    case brak:
+        return '#';
+        break;
+
+    case niebieski:
+        return 'b';
+        break;
+
+    case czerwony:
+        return 'r';
+        break;
+
+    case zolty:
+        return 'y';
+        break;
+
+    case zielony:
+        return 'g';
+        break;
+    }
+
+    return ' ';
+}
+
+void wyczyscEkran() //Tylko dla wersji konsolowej
+{
+    system ("cls||clear");
+}
+
+void Plansza::wyczyscPlansze()
+{
+    for(int i = 0; i<obrazPlanszy.size(); i++)
+    {
+        std::string pustaLinia = "           ";
+        obrazPlanszy.at(i) = pustaLinia;
+    }
+}
+
+void Plansza::narysujPlansze()
+{
+    unsigned int i = 0;
+
+    while(pola.begin()+i != pola.end())
+    {
+        if(pola.at(i)->wskPionek != nullptr)
+            obrazPlanszy[pola[i]->y][pola[i]->x] = przypiszKolor(pola.at(i)->wskPionek->kolorPionka);
+        else
+            obrazPlanszy[pola[i]->y][pola[i]->x] = przypiszKolor(pola[i]->kolorPola);
+        i++;
+    }
 }
 
 void Plansza::wyswietlPlansze()
 {
-    std::vector<std::string> planszaStr;
+    wyczyscEkran();
+    wyczyscPlansze();
+    narysujPlansze();
 
-    for(int i = 0; i<11; i++)
+    for(int i = 0; i < obrazPlanszy.size(); i++)
     {
-        std::string pustaLinia = "           ";
-        planszaStr.push_back(pustaLinia);
+        std::cout<<obrazPlanszy[i]<<std::endl;
     }
 
-    unsigned int i = 0;
-    while(pola.begin()+i != pola.end())
+}
+
+void poczekaj(int liczbaMs)
+{
+    // Aktualny czas
+    clock_t czas = clock();
+
+    // Petla dopoki nie minie podany czas
+    while (clock() < czas + liczbaMs);
+}
+
+void Plansza::przesunPionek(Pionek* pionek, int liczbaPol, int szybkoscAnimacji) //do przeniesienia do klasy Gra pozniej, dostac test czy pionek wykonal okrazenie
+{
+    Pole* aktualnePolne = pionek->wskPole;
+
+    while(liczbaPol > 0)
     {
-        switch(pola[i]->kolorPola)
-        {
-            case brak:
-            planszaStr[pola[i]->y][pola[i]->x] = '#';
-            break;
+        aktualnePolne->wskKolejny->postawPionek(pionek);
+        aktualnePolne->zdejmijPionek();
 
-            case niebieski:
-            planszaStr[pola[i]->y][pola[i]->x] = 'b';
-            break;
+        aktualnePolne = aktualnePolne->wskKolejny;
 
-            case czerwony:
-            planszaStr[pola[i]->y][pola[i]->x] = 'r';
-            break;
+        pionek->postawPionek(aktualnePolne);
 
-            case zolty:
-            planszaStr[pola[i]->y][pola[i]->x] = 'y';
-            break;
-
-            case zielony:
-            planszaStr[pola[i]->y][pola[i]->x] = 'g';
-            break;
-        }
-        i++;
+        wyswietlPlansze();
+        poczekaj(szybkoscAnimacji);
+        liczbaPol--;
     }
-
-    for(int i = 0; i < planszaStr.size(); i++)
-    {
-        std::cout<<planszaStr[i]<<std::endl;
-    }
-
 }

@@ -1,7 +1,9 @@
 #ifndef POLE_H
 #define POLE_H
 
-enum kolor{niebieski=0, czerwony=1, zolty=2, zielony=3, brak=4};
+#include "Kolor.h"
+
+class Pionek;
 
 class Pole
 {
@@ -9,15 +11,15 @@ class Pole
         Pole();
         Pole(int aX, int aY,kolor aKolorPola=brak, Pole * aWskPoprzedni = nullptr, Pole * aWskKolejny = nullptr);
         ~Pole();
-        //void postawPionek(); //Obiekt otrzymuje wskaznik pionka, który stanal na tym polu
+        void postawPionek(Pionek* wsk);
+        void zdejmijPionek();
 
-    protected:
-        //Pionek wskPionek; //wskaznik na pionek znajdujacy sie na polu
     private:
         friend class Plansza;
         int x;
         int y;
         kolor kolorPola;
+        Pionek* wskPionek;
         Pole *wskPoprzedni;
         Pole *wskKolejny;
 

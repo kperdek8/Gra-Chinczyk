@@ -6,7 +6,7 @@ Pole::Pole()
     y=0;
     kolorPola=brak;
     wskKolejny=nullptr;
-    //wskPionek=nullptr;
+    wskPionek=nullptr;
 }
 
 Pole::Pole(int aX, int aY, kolor aKolorPola, Pole * aWskPoprzedni, Pole * aWskKolejny)
@@ -16,10 +16,20 @@ Pole::Pole(int aX, int aY, kolor aKolorPola, Pole * aWskPoprzedni, Pole * aWskKo
     kolorPola = aKolorPola;
     wskPoprzedni=aWskPoprzedni;
     wskKolejny=aWskKolejny;
-    //wskPionek=nullptr;
+    wskPionek=nullptr;
 }
 
 Pole::~Pole()
 {
     //dtor
+}
+
+void Pole::postawPionek(Pionek* wsk)
+{
+    wskPionek = wsk;
+}
+
+void Pole::zdejmijPionek()
+{
+    wskPionek = nullptr;
 }
