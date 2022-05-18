@@ -5,5 +5,6 @@ int main()
 {
     Plansza plansza;
     plansza.wyswietlPlansze();
+
     return 0;
 }

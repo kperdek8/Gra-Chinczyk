@@ -12,7 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-std=c17" />
+					<Add option="-std=c++14" />
 					<Add option="-g" />
 					<Add directory="include" />
 				</Compiler>
@@ -39,6 +39,10 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Plansza.cpp" />
 		<Unit filename="src/Pole.cpp" />
-		<Extensions />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

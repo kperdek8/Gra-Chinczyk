@@ -17,3 +17,21 @@
 1652279516 source:c:\users\student\documents\chinczyk\src\pole.cpp
 	"Pole.h"
 
+1652873151 source:c:\users\krzys\desktop\programowanie\programowanie obiektowe\chinczyk\main.cpp
+	<iostream>
+	<Plansza.h>
+
+1652873775 c:\users\krzys\desktop\programowanie\programowanie obiektowe\chinczyk\include\plansza.h
+	"Pole.h"
+	<vector>
+
+1652873355 c:\users\krzys\desktop\programowanie\programowanie obiektowe\chinczyk\include\pole.h
+
+1652283940 source:c:\users\krzys\desktop\programowanie\programowanie obiektowe\chinczyk\src\pole.cpp
+	"Pole.h"
+
+1652874363 source:c:\users\krzys\desktop\programowanie\programowanie obiektowe\chinczyk\src\plansza.cpp
+	"Plansza.h"
+	<string>
+	<iostream>
+

@@ -10,12 +10,15 @@ class Plansza
         Plansza();
         virtual ~Plansza();
         void wyswietlPlansze();
-        void wyswietlKomunikat() const;
+        void wyswietlKomunikat();
 
     protected:
 
     private:
         std::vector<Pole*> pola;
+        std::vector<Pole*> polaStartowe;
+        std::vector<std::vector<Pole*>> schowki;
+
 };
 
 #endif // PLANSZA_H
