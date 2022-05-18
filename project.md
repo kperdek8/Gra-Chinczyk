@@ -58,7 +58,7 @@
 * Sprawdza czy gra się skończyła (czy wszystkie pionki, któregoś gracza dotarły do "domku")
 
 # TO-DO
-- [ ] Klasa Plansza (najpierw w wersji konsolowej), klasa Pole
+- [x] Klasa Plansza (najpierw w wersji konsolowej), klasa Pole
 - [ ] Klasa Pionek i algorytm przesuwania pionka (z pionkiem zaczynającym od razu na planszy)
 - [ ] Klasa Gra i przeniesienie algorytmu przesuwania pionka do niej
 - [ ] Klasa Gracz, implementacja petli gry oraz komunikacji Gra<->Gracz 
