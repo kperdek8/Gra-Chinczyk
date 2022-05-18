@@ -36,7 +36,7 @@
 
 * Zawiera informacje do którego gracza należy
 * Zawiera informacje na którym polu stoi
-* 
+
 ### Gracz
 
 * Rzuca kością
