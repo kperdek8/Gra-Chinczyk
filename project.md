@@ -63,7 +63,6 @@
 - [ ] Klasa Gra i przeniesienie algorytmu przesuwania pionka do niej
 - [ ] Klasa Gracz, implementacja petli gry oraz komunikacji Gra<->Gracz 
 - [ ] Obsluga wielu graczy (pionki różnych kolorów oraz komunikacja klasy Gry z każdym z graczy osobno)
-- [ ] Dodanie schowka, pól startowych, "domków" do planszy
 - [ ] Dodanie sekwencji startowej - wszystkie pionki startują w schowku, gracze rzucają trzy razy aż do wylosowania szóstki żeby wystawić pionek
 - [ ] Obsługa "domków" 
 - [ ] Obsługa wylosowania szóstki - możliwość wystawiania kolejnych pionków na planszę oraz sumowanie rzutów
