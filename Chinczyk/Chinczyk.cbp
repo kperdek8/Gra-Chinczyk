@@ -34,11 +34,16 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/Dezycja.h" />
+		<Unit filename="include/Gra.h" />
+		<Unit filename="include/Gracz.h" />
 		<Unit filename="include/Kolor.h" />
 		<Unit filename="include/Pionek.h" />
 		<Unit filename="include/Plansza.h" />
 		<Unit filename="include/Pole.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Gra.cpp" />
+		<Unit filename="src/Gracz.cpp" />
 		<Unit filename="src/Pionek.cpp" />
 		<Unit filename="src/Plansza.cpp" />
 		<Unit filename="src/Pole.cpp" />

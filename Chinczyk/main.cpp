@@ -1,10 +1,12 @@
 #include <iostream>
 #include <Plansza.h>
+#include <Gra.h>
 
 int main()
 {
-    Plansza plansza;
-    plansza.wyswietlPlansze();
-    plansza.przesunPionek(plansza.testowyPionek,30,400);
+    Gra gra;
+    gra.zresetujPlansze();
+    gra.zacznijGre();
+
     return 0;
 }

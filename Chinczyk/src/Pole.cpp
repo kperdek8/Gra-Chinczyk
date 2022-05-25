@@ -9,7 +9,7 @@ Pole::Pole()
     wskPionek=nullptr;
 }
 
-Pole::Pole(int aX, int aY, kolor aKolorPola, Pole * aWskPoprzedni, Pole * aWskKolejny)
+Pole::Pole(int aX, int aY, Kolor aKolorPola, Pole * aWskPoprzedni, Pole * aWskKolejny)
 {
     x=aX;
     y=aY;

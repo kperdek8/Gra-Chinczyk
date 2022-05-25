@@ -1,7 +1,6 @@
 #include "Plansza.h"
 
 #include <string>
-#include <time.h>
 #include <stdlib.h>
 #include <iostream>
 /*
@@ -261,7 +260,7 @@ Plansza::~Plansza()
     }
 }
 
-char przypiszKolor(kolor kolorPola)
+char przypiszKolor(Kolor kolorPola)
 {
     switch(kolorPola)
     {
@@ -317,6 +316,15 @@ void Plansza::narysujPlansze()
     }
 }
 
+void Plansza::wyswietlKomunikat(std::string komunikat, bool czyCzekac)
+{
+    wyswietlPlansze();
+    std::cout<<komunikat<<std::endl;
+
+    if(czyCzekac)
+        std::cin.get(); //poczekaj na input od uzytkownika
+}
+
 void Plansza::wyswietlPlansze()
 {
     wyczyscEkran();
@@ -328,32 +336,4 @@ void Plansza::wyswietlPlansze()
         std::cout<<obrazPlanszy[i]<<std::endl;
     }
 
-}
-
-void poczekaj(int liczbaMs)
-{
-    // Aktualny czas
-    clock_t czas = clock();
-
-    // Petla dopoki nie minie podany czas
-    while (clock() < czas + liczbaMs);
-}
-
-void Plansza::przesunPionek(Pionek* pionek, int liczbaPol, int szybkoscAnimacji) //do przeniesienia do klasy Gra pozniej, dostac test czy pionek wykonal okrazenie
-{
-    Pole* aktualnePolne = pionek->wskPole;
-
-    while(liczbaPol > 0)
-    {
-        aktualnePolne->wskKolejny->postawPionek(pionek);
-        aktualnePolne->zdejmijPionek();
-
-        aktualnePolne = aktualnePolne->wskKolejny;
-
-        pionek->postawPionek(aktualnePolne);
-
-        wyswietlPlansze();
-        poczekaj(szybkoscAnimacji);
-        liczbaPol--;
-    }
 }

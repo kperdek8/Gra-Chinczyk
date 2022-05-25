@@ -9,16 +9,18 @@ class Pole
 {
     public:
         Pole();
-        Pole(int aX, int aY,kolor aKolorPola=brak, Pole * aWskPoprzedni = nullptr, Pole * aWskKolejny = nullptr);
+        Pole(int aX, int aY,Kolor aKolorPola=brak, Pole * aWskPoprzedni = nullptr, Pole * aWskKolejny = nullptr);
         ~Pole();
         void postawPionek(Pionek* wsk);
         void zdejmijPionek();
+        Pole* nastepnePole() { return wskKolejny;}
+        Pole* poprzedniePole() { return wskPoprzedni;}
 
     private:
         friend class Plansza;
         int x;
         int y;
-        kolor kolorPola;
+        Kolor kolorPola;
         Pionek* wskPionek;
         Pole *wskPoprzedni;
         Pole *wskKolejny;

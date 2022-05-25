@@ -12,11 +12,11 @@ class Plansza
     public:
         Plansza();
         ~Plansza();
+        void wyswietlRzut(int rzut);
         void wyswietlPlansze();
         void narysujPlansze();
         void wyczyscPlansze();
-        void wyswietlKomunikat();
-        void przesunPionek(Pionek* pionek, int liczbaPol, int szybkoscAnimacji = 600);
+        void wyswietlKomunikat(std::string komunikat, bool czyCzekac = true);
         Pionek* testowyPionek;
 
     protected:

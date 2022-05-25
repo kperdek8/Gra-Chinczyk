@@ -6,7 +6,7 @@ Pionek::Pionek()
     wskPole = nullptr;
 }
 
-Pionek::Pionek(kolor aKolorPionka, Pole* aWskPole)
+Pionek::Pionek(Kolor aKolorPionka, Pole* aWskPole)
 {
     kolorPionka = aKolorPionka;
     wskPole = aWskPole;

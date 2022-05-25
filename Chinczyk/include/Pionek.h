@@ -9,13 +9,14 @@ class Pionek
 {
     public:
         Pionek();
-        Pionek(kolor aKolorPionka, Pole* aWskPole);
+        Pionek(Kolor aKolorPionka, Pole* aWskPole);
         ~Pionek();
         void postawPionek(Pole* pole);
+        Pole* gdzieStoje() { return wskPole; }
 
     private:
         friend class Plansza;
-        kolor kolorPionka;
+        Kolor kolorPionka;
         Pole* wskPole;
 
 };

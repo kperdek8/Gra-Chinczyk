@@ -48,3 +48,52 @@
 
 1652880732 c:\users\student\documents\chinczyk\include\kolor.h
 
+1653486113 source:c:\users\student\documents\gra-chinczyk-main\chinczyk\main.cpp
+	<iostream>
+	<Plansza.h>
+	<Gra.h>
+
+1653486917 c:\users\student\documents\gra-chinczyk-main\chinczyk\include\plansza.h
+	"Pole.h"
+	"Pionek.h"
+	<vector>
+	<string>
+
+1653488566 c:\users\student\documents\gra-chinczyk-main\chinczyk\include\pole.h
+	"Kolor.h"
+
+1653488381 c:\users\student\documents\gra-chinczyk-main\chinczyk\include\kolor.h
+
+1653488550 c:\users\student\documents\gra-chinczyk-main\chinczyk\include\pionek.h
+	"Kolor.h"
+
+1653488594 source:c:\users\student\documents\gra-chinczyk-main\chinczyk\src\pionek.cpp
+	"Pionek.h"
+
+1653488509 source:c:\users\student\documents\gra-chinczyk-main\chinczyk\src\plansza.cpp
+	"Plansza.h"
+	<string>
+	<stdlib.h>
+	<iostream>
+
+1653488588 source:c:\users\student\documents\gra-chinczyk-main\chinczyk\src\pole.cpp
+	"Pole.h"
+
+1653487064 source:c:\users\student\documents\gra-chinczyk-main\chinczyk\src\gra.cpp
+	"Gra.h"
+	<time.h>
+	<cstdlib>
+	<iostream>
+
+1653488598 c:\users\student\documents\gra-chinczyk-main\chinczyk\include\gra.h
+	"Plansza.h"
+	"Kolor.h"
+	"Gracz.h"
+	<vector>
+
+1653488573 source:c:\users\student\documents\gra-chinczyk-main\chinczyk\src\gracz.cpp
+	"Gracz.h"
+
+1653488542 c:\users\student\documents\gra-chinczyk-main\chinczyk\include\gracz.h
+	"Kolor.h"
+
