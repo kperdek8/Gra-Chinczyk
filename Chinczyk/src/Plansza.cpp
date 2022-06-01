@@ -25,6 +25,7 @@ Plansza::Plansza()
     polaStartowe.resize(4);
     schowki.resize(4);
     obrazPlanszy.resize(11);
+    pionki.resize(4);
 
     Pole* pierwszyInit = nullptr; //Wskaznik sluzacy do polaczenia na koncu inicjalizacji pierwszego i ostatniego pola
     Pole* pole = nullptr; //Wskaznik ktoremu beda przypisywane inicjalizowane pola, ktore nastepnie trafia do wektora.
@@ -39,7 +40,7 @@ Plansza::Plansza()
 
 
             Pionek* pionek = new Pionek(czerwony,pole);
-            pionki.push_back(pionek);
+            pionki.at(czerwony).push_back(pionek);
 
             pole->postawPionek(pionek);
         }
@@ -54,7 +55,7 @@ Plansza::Plansza()
             schowki.at(niebieski).push_back(pole);
 
             Pionek* pionek = new Pionek(niebieski,pole);
-            pionki.push_back(pionek);
+            pionki.at(niebieski).push_back(pionek);
 
             pole->postawPionek(pionek);
         }
@@ -69,7 +70,7 @@ Plansza::Plansza()
             schowki.at(zolty).push_back(pole);
 
             Pionek* pionek = new Pionek(zolty,pole);
-            pionki.push_back(pionek);
+            pionki.at(zolty).push_back(pionek);
 
             pole->postawPionek(pionek);
         }
@@ -84,7 +85,7 @@ Plansza::Plansza()
             schowki.at(zielony).push_back(pole);
 
             Pionek* pionek = new Pionek(zielony,pole);
-            pionki.push_back(pionek);
+            pionki.at(zielony).push_back(pionek);
 
             pole->postawPionek(pionek);
         }
@@ -245,16 +246,19 @@ Plansza::Plansza()
     poprzedInit->wskKolejny = pole;
     pierwszyInit->wskPoprzedni = pole; //Laczenie ostatniego i pierwsze pola
 
-    //Do testowania
-    Pionek* pionek = new Pionek(czerwony,polaStartowe.at(czerwony));
-    testowyPionek = pionek;
-    polaStartowe.at(czerwony)->postawPionek(pionek);
+    //Do testowania, postawienie jednego pionka kazdego gracza na polu startowym
 
+    for(size_t i = 0; i<pionki.size(); i++)
+    {
+        Pionek* pionek = pionki.at(i).at(0);
+        pionek->postawPionek(polaStartowe.at(i));
+        polaStartowe.at(i)->postawPionek(pionek);
+    }
 }
 
 Plansza::~Plansza()
 {
-    for(int i = 0; i<pola.size(); i++)
+    for(size_t i = 0; i<pola.size(); i++)
     {
         delete pola.at(i);
     }
@@ -264,23 +268,23 @@ char przypiszKolor(Kolor kolorPola)
 {
     switch(kolorPola)
     {
-    case brak:
+    case Kolor::brak:
         return '#';
         break;
 
-    case niebieski:
+    case Kolor::niebieski:
         return 'b';
         break;
 
-    case czerwony:
+    case Kolor::czerwony:
         return 'r';
         break;
 
-    case zolty:
+    case Kolor::zolty:
         return 'y';
         break;
 
-    case zielony:
+    case Kolor::zielony:
         return 'g';
         break;
     }
@@ -295,7 +299,7 @@ void wyczyscEkran() //Tylko dla wersji konsolowej
 
 void Plansza::wyczyscPlansze()
 {
-    for(int i = 0; i<obrazPlanszy.size(); i++)
+    for(size_t i = 0; i<obrazPlanszy.size(); i++)
     {
         std::string pustaLinia = "           ";
         obrazPlanszy.at(i) = pustaLinia;
@@ -322,7 +326,10 @@ void Plansza::wyswietlKomunikat(std::string komunikat, bool czyCzekac)
     std::cout<<komunikat<<std::endl;
 
     if(czyCzekac)
+    {
+        std::cin.ignore();
         std::cin.get(); //poczekaj na input od uzytkownika
+    }
 }
 
 void Plansza::wyswietlPlansze()
@@ -331,9 +338,14 @@ void Plansza::wyswietlPlansze()
     wyczyscPlansze();
     narysujPlansze();
 
-    for(int i = 0; i < obrazPlanszy.size(); i++)
+    for(size_t i = 0; i < obrazPlanszy.size(); i++)
     {
         std::cout<<obrazPlanszy[i]<<std::endl;
     }
 
+}
+
+Pionek* Plansza::zwrocPionek(Kolor kolorGracza, int indeksPionka)
+{
+    return pionki[kolorGracza][indeksPionka];
 }

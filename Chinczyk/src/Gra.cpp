@@ -2,6 +2,7 @@
 #include <time.h>
 #include <cstdlib>
 #include <string>
+#include <iostream>
 
 void poczekaj(int liczbaMs)
 {
@@ -9,7 +10,7 @@ void poczekaj(int liczbaMs)
     clock_t czas = clock();
 
     // Petla dopoki nie minie podany czas
-    while (clock() < czas + liczbaMs);
+    while (clock() < czas + liczbaMs * CLOCKS_PER_SEC/1000);
 }
 
 Gra::Gra()
@@ -17,15 +18,16 @@ Gra::Gra()
     czyGraSkonczona = false;
     planszaWsk = nullptr;
 
-    Gracz* gracz = new Gracz(false,niebieski);
+    Gracz* gracz = new Gracz(false,Kolor::niebieski);
     gracze.push_back(gracz);
-    gracz = new Gracz(false,czerwony);
+    gracz = new Gracz(false,Kolor::czerwony);
     gracze.push_back(gracz);
-    gracz = new Gracz(false,zolty);
+    gracz = new Gracz(false,Kolor::zolty);
     gracze.push_back(gracz);
-    gracz = new Gracz(false,niebieski);
+    gracz = new Gracz(false,Kolor::niebieski);
     gracze.push_back(gracz);
 
+    czyjaTura = Kolor::niebieski;
 }
 
 Gra::~Gra()
@@ -34,19 +36,52 @@ Gra::~Gra()
         delete planszaWsk;
 }
 
-void Gra::zacznijGre() //Petla gry
+std::string odmienKolor(Kolor kolor) //
+{
+    switch(kolor)
+    {
+        case Kolor::czerwony:
+            return "czerwonego";
+        case Kolor::niebieski:
+            return "niebieskiego";
+        case Kolor::zolty:
+            return "zoltego";
+        case Kolor::zielony:
+            return "zielonego";
+    }
+
+    return "cos poszlo zle";
+}
+
+void Gra::petlaGry() //Petla gry
 {
     while(czyGraSkonczona != true)
     {
         poczekaj(240);
         planszaWsk->wyswietlPlansze();
+        planszaWsk->wyswietlKomunikat("Tura gracza "+odmienKolor(czyjaTura),false);
 
+        int rzut = 0;
+
+        switch(gracze[czyjaTura]->zdecyduj())
+        {
+            case (Decyzja::rzuc):
+                rzut = rzucKoscia();
+                planszaWsk->wyswietlKomunikat("Kliknij ENTER by przesunac pionek",true);
+                przesunPionek(planszaWsk->zwrocPionek(czyjaTura,0),rzut,400);
+                break;
+            case (Decyzja::wystaw):
+                //do implementacji pozniej
+                break;
+        }
+
+        zaktualizujTure();
     }
 }
 
 int Gra::rzucKoscia()
 {
-    planszaWsk->wyswietlKomunikat("Wcisnij enter by rzucic koscia");
+    planszaWsk->wyswietlKomunikat("Wcisnij enter by rzucic koscia",true);
 
     srand(time(0));
     int rzut;
@@ -56,12 +91,15 @@ int Gra::rzucKoscia()
         planszaWsk->wyswietlKomunikat(("Rzucanie koscia: "+std::to_string(rzut)),false);
         poczekaj(400);
     }
+
+    poczekaj(1000);
+
     return rzut;
 }
 
 void Gra::zaktualizujTure()
 {
-
+    ++czyjaTura;
 }
 
 void Gra::zresetujPlansze()

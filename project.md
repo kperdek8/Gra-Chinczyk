@@ -61,8 +61,8 @@
 - [x] Klasa Plansza (najpierw w wersji konsolowej), klasa Pole
 - [x] Klasa Pionek i algorytm przesuwania pionka (z pionkiem zaczynającym od razu na planszy)
 - [x] Klasa Gra i przeniesienie algorytmu przesuwania pionka do niej
-- [ ] Klasa Gracz, implementacja petli gry oraz komunikacji Gra<->Gracz 
-- [ ] Obsluga wielu graczy (pionki różnych kolorów oraz komunikacja klasy Gry z każdym z graczy osobno)
+- [x] Klasa Gracz, implementacja petli gry oraz komunikacji Gra<->Gracz 
+- [x] Obsluga wielu graczy (pionki różnych kolorów oraz komunikacja klasy Gry z każdym z graczy osobno)
 - [ ] Dodanie sekwencji startowej - wszystkie pionki startują w schowku, gracze rzucają trzy razy aż do wylosowania szóstki żeby wystawić pionek
 - [ ] Obsługa "domków" 
 - [ ] Obsługa wylosowania szóstki - możliwość wystawiania kolejnych pionków na planszę oraz sumowanie rzutów

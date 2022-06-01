@@ -34,7 +34,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="include/Dezycja.h" />
+		<Unit filename="include/Decyzja.h" />
 		<Unit filename="include/Gra.h" />
 		<Unit filename="include/Gracz.h" />
 		<Unit filename="include/Kolor.h" />

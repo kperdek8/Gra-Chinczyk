@@ -3,12 +3,16 @@
 	<iostream>
 	<Plansza.h>
 
+1653486113 >
+
 1652884363 source:c:\users\student\documents\chinczyk\src\plansza.cpp
 	"Plansza.h"
 	<string>
 	<time.h>
 	<stdlib.h>
 	<iostream>
+
+1653488542 
 
 1652884359 c:\users\student\documents\chinczyk\include\plansza.h
 	"Pole.h"
@@ -96,4 +100,59 @@
 
 1653488542 c:\users\student\documents\gra-chinczyk-main\chinczyk\include\gracz.h
 	"Kolor.h"
+
+1654077053 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Pionek.cpp
+	"Pionek.h"
+
+1654077053 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Pionek.h
+	"Kolor.h"
+
+1654093015 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Kolor.h
+	<iostream>
+
+1654077053 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Pole.cpp
+	"Pole.h"
+
+1654077053 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Pole.h
+	"Kolor.h"
+
+1654091764 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Plansza.cpp
+	"Plansza.h"
+	<string>
+	<stdlib.h>
+	<iostream>
+
+1654091077 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Plansza.h
+	"Pole.h"
+	"Pionek.h"
+	<vector>
+	<string>
+
+1654089124 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/main.cpp
+	<iostream>
+	<Plansza.h>
+	<Gra.h>
+
+1654089424 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Gra.h
+	"Plansza.h"
+	"Kolor.h"
+	"Gracz.h"
+	<vector>
+
+1654093620 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Gracz.h
+	"Kolor.h"
+	"Decyzja.h"
+
+1654077053 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Decyzja.h
+
+1654093838 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Gra.cpp
+	"Gra.h"
+	<time.h>
+	<cstdlib>
+	<string>
+	<iostream>
+
+1654093624 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Gracz.cpp
+	"Gracz.h"
+	"iostream"
 

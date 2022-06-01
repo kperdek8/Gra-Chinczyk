@@ -17,16 +17,16 @@ class Plansza
         void narysujPlansze();
         void wyczyscPlansze();
         void wyswietlKomunikat(std::string komunikat, bool czyCzekac = true);
-        Pionek* testowyPionek;
+        Pionek* zwrocPionek(Kolor kolorGracza, int indeksPionka);
 
     protected:
 
     private:
         std::vector<std::string> obrazPlanszy;
-        std::vector<Pionek*> pionki;
+        std::vector<std::vector<Pionek*>> pionki; //Pierwsza wspolrzedna odpowiada za kolor gracza, a druga indeksy pionkow nalezacych do danego gracza
         std::vector<Pole*> pola;
         std::vector<Pole*> polaStartowe;
-        std::vector<std::vector<Pole*>> schowki;
+        std::vector<std::vector<Pole*>> schowki; //Pierwsza wspolrzedna odpowiada za kolor gracza, a druga indeksy poszczegolnych pol schowka nalezacych do danego gracza
 
 };
 

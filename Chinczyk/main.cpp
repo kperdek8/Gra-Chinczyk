@@ -6,7 +6,8 @@ int main()
 {
     Gra gra;
     gra.zresetujPlansze();
-    gra.zacznijGre();
+    gra.petlaGry();
+
 
     return 0;
 }

@@ -14,7 +14,7 @@ class Gra
         virtual ~Gra();
         void przesunPionek(Pionek* pionek, int liczbaPol, int szybkoscAnimacji = 600);
         void zresetujPlansze();
-        void zacznijGre();
+        void petlaGry();
         void zaktualizujTure();
         int rzucKoscia();
 

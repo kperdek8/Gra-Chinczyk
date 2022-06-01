@@ -13,23 +13,31 @@ Gracz::~Gracz()
     //dtor
 }
 
-void wyswietlZapytanie()
+void wyswietlZapytanie(bool czyMozeWystawic)
 {
-    std::cout<<"Wpisz 'rzuc' zeby rzucic koscia lub 'wystaw' zeby wystawic nowy pionek do gry (jezeli zasady na to pozwalaja"<<std::endl;
+    std::cout<<"Wpisz 'rzuc' zeby rzucic koscia";
+    if(czyMozeWystawic)
+    std::cout<<" lub 'wystaw' zeby wystawic nowy pionek do gry";
+    std::cout<<std::endl;;
 }
 
-Decyzja Gracz::zdecyduj()
+Decyzja Gracz::zdecyduj(bool czyMozeWystawic)
 {
     std::string input;
-    wyswietlZapytanie();
+    wyswietlZapytanie(czyMozeWystawic);
 
     while(input != "rzuc" && input != "wystaw")
     {
-        cin>>input;
+        std::cin>>input;
+
+        if(input != "rzuc" && input != "wystaw")
+        {
+            std::cout<<"Wprowadz prawidlowa decyzje"<<std::endl;
+        }
     }
 
     if(input == "rzuc")
-        return rzuc;
+        return Decyzja::rzuc;
     else
-        return wystaw;
+        return Decyzja::wystaw;
 }

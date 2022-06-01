@@ -2,7 +2,7 @@
 #define GRACZ_H
 
 #include "Kolor.h"
-#include "Dezycja.h"
+#include "Decyzja.h"
 
 class Gracz
 {
@@ -10,7 +10,7 @@ class Gracz
         Gracz(bool aJestAI, Kolor aKolorGracza);
         virtual ~Gracz();
         void rzuc();
-        Decyzja zdecyduj();
+        Decyzja zdecyduj(bool czyMozeWystawic=false);
 
     protected:
 
