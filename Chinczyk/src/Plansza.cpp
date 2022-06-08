@@ -22,6 +22,8 @@ yy  y##  gg
 
 Plansza::Plansza()
 {
+    okno = new sf::Window(sf::VideoMode(800,600),"Chinczyk",sf::Style::Close);
+
     polaStartowe.resize(4);
     schowki.resize(4);
     obrazPlanszy.resize(11);
@@ -258,6 +260,8 @@ Plansza::Plansza()
 
 Plansza::~Plansza()
 {
+    delete okno;
+
     for(size_t i = 0; i<pola.size(); i++)
     {
         delete pola.at(i);

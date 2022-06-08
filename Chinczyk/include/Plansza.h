@@ -4,6 +4,7 @@
 #include "Pole.h"
 #include "Pionek.h"
 
+#include <SFML/Window.hpp>
 #include <vector>
 #include <string>
 
@@ -22,6 +23,7 @@ class Plansza
     protected:
 
     private:
+        sf::Window* okno;
         std::vector<std::string> obrazPlanszy;
         std::vector<std::vector<Pionek*>> pionki; //Pierwsza wspolrzedna odpowiada za kolor gracza, a druga indeksy pionkow nalezacych do danego gracza
         std::vector<Pole*> pola;

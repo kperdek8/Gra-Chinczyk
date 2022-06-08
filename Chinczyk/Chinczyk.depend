@@ -116,15 +116,16 @@
 1654077053 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Pole.h
 	"Kolor.h"
 
-1654091764 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Plansza.cpp
+1654686008 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Plansza.cpp
 	"Plansza.h"
 	<string>
 	<stdlib.h>
 	<iostream>
 
-1654091077 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Plansza.h
+1654685832 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Plansza.h
 	"Pole.h"
 	"Pionek.h"
+	<SFML/Window.hpp>
 	<vector>
 	<string>
 
@@ -155,4 +156,424 @@
 1654093624 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Gracz.cpp
 	"Gracz.h"
 	"iostream"
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Clipboard.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+	<SFML/Window/Touch.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/FileInputStream.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/MemoryInputStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Config.hpp
+	"TargetConditionals.h"
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Export.hpp
+	<SFML/Config.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Time.hpp
+	<SFML/System/Export.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/FileInputStream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdio>
+	<string>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/InputStream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/NonCopyable.hpp
+	<SFML/System/Export.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/MemoryInputStream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Export.hpp>
+	<cstdlib>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/String.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Utf.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<SFML/System/String.inl>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Utf.inl
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/String.inl
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Thread.inl
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/ThreadLocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/ThreadLocalPtr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/ThreadLocalPtr.inl
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Vector2.inl
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/System/Vector3.inl
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Clipboard.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Export.hpp
+	<SFML/Config.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Context.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/GlResource.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/ContextSettings.hpp
+	<SFML/Config.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Cursor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Joystick.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Sensor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/System/Time.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Touch.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/VideoMode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/Window.hpp
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Vector2.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/WindowHandle.hpp
+	<SFML/Config.hpp>
+
+1654679043 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFML/Window/WindowStyle.hpp
+
+1654679894 /usr/local/include/SFML/Window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Clipboard.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+	<SFML/Window/Touch.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+
+1654679894 /usr/local/include/SFML/System.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/FileInputStream.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/MemoryInputStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1654679894 /usr/local/include/SFML/Config.hpp
+	"TargetConditionals.h"
+
+1654679894 /usr/local/include/SFML/System/Clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1654679894 /usr/local/include/SFML/System/Export.hpp
+	<SFML/Config.hpp>
+
+1654679894 /usr/local/include/SFML/System/Time.hpp
+	<SFML/System/Export.hpp>
+
+1654679894 /usr/local/include/SFML/System/Err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1654679894 /usr/local/include/SFML/System/FileInputStream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdio>
+	<string>
+
+1654679894 /usr/local/include/SFML/System/InputStream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Export.hpp>
+
+1654679894 /usr/local/include/SFML/System/NonCopyable.hpp
+	<SFML/System/Export.hpp>
+
+1654679894 /usr/local/include/SFML/System/Lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1654679894 /usr/local/include/SFML/System/MemoryInputStream.hpp
+	<SFML/Config.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Export.hpp>
+	<cstdlib>
+
+1654679894 /usr/local/include/SFML/System/Mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1654679894 /usr/local/include/SFML/System/Sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1654679894 /usr/local/include/SFML/System/String.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Utf.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<SFML/System/String.inl>
+
+1654679894 /usr/local/include/SFML/System/Utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1654679894 /usr/local/include/SFML/System/Utf.inl
+
+1654679894 /usr/local/include/SFML/System/String.inl
+
+1654679894 /usr/local/include/SFML/System/Thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1654679894 /usr/local/include/SFML/System/Thread.inl
+
+1654679894 /usr/local/include/SFML/System/ThreadLocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1654679894 /usr/local/include/SFML/System/ThreadLocalPtr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1654679894 /usr/local/include/SFML/System/ThreadLocalPtr.inl
+
+1654679894 /usr/local/include/SFML/System/Vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1654679894 /usr/local/include/SFML/System/Vector2.inl
+
+1654679894 /usr/local/include/SFML/System/Vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1654679894 /usr/local/include/SFML/System/Vector3.inl
+
+1654679894 /usr/local/include/SFML/Window/Clipboard.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1654679894 /usr/local/include/SFML/Window/Export.hpp
+	<SFML/Config.hpp>
+
+1654679894 /usr/local/include/SFML/Window/Context.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1654679894 /usr/local/include/SFML/Window/GlResource.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1654679894 /usr/local/include/SFML/Window/ContextSettings.hpp
+	<SFML/Config.hpp>
+
+1654679894 /usr/local/include/SFML/Window/Cursor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+
+1654679894 /usr/local/include/SFML/Window/Event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/Sensor.hpp>
+
+1654679894 /usr/local/include/SFML/Window/Joystick.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/String.hpp>
+
+1654679894 /usr/local/include/SFML/Window/Keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1654679894 /usr/local/include/SFML/Window/Mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1654679894 /usr/local/include/SFML/Window/Sensor.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector3.hpp>
+	<SFML/System/Time.hpp>
+
+1654679894 /usr/local/include/SFML/Window/Touch.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1654679894 /usr/local/include/SFML/Window/VideoMode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1654679894 /usr/local/include/SFML/Window/Window.hpp
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Cursor.hpp>
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Vector2.hpp>
+
+1654679894 /usr/local/include/SFML/Window/WindowHandle.hpp
+	<SFML/Config.hpp>
+
+1654679894 /usr/local/include/SFML/Window/WindowStyle.hpp
 
