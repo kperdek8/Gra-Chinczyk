@@ -1,8 +1,6 @@
 #include "Gra.h"
 #include <time.h>
 #include <cstdlib>
-#include <string>
-#include <iostream>
 
 void poczekaj(int liczbaMs)
 {
@@ -38,6 +36,7 @@ Gra::~Gra()
 
 void Gra::petlaGry() //Petla gry
 {
+
     while(czyGraSkonczona != true)
     {
         planszaWsk->wyswietlPlansze();

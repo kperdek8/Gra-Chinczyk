@@ -56,6 +56,12 @@
 		<Unit filename="include/Pole.h" />
 		<Unit filename="include/SFMLSupport.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="sprites/kosc-cztery.png" />
+		<Unit filename="sprites/kosc-dwa.png" />
+		<Unit filename="sprites/kosc-jeden.png" />
+		<Unit filename="sprites/kosc-piec.png" />
+		<Unit filename="sprites/kosc-szesc.png" />
+		<Unit filename="sprites/kosc-trzy.png" />
 		<Unit filename="src/Gra.cpp" />
 		<Unit filename="src/Gracz.cpp" />
 		<Unit filename="src/Pionek.cpp" />

@@ -51,7 +51,7 @@
 
 * Pilnuje czyja jest tura i informuje o tym plansze
 * Pyta gracza o decyzje
-* Zajmuje sie przesuwaniem pionków
+* Przesuwa pionki
 * Losuje wynik rzutu kością
 * Sprawdza czy pionek wykonał pełne okrążenie, jeśli tak przenosi pionek do "domku"
 * Sprawdza czy ruch użytkownika jest dozwolony
@@ -69,6 +69,6 @@
 - [ ] Obsługa wyboru, którego pionka ruszyć
 - [ ] Obsługa zbijania pionków i blokada ruchu pionkiem, jeśli będzie skutkował staniem dwóch pionków tego samego koloru na tym samym polu
 - [ ] Obsługa trzykrotnego rzutu kością w przypadku, kiedy gracz nie ma wystawionych pionków na planszy
-- [ ] Przerobienie klasy Plansza do SFML
+- [x] Przerobienie klasy Plansza do SFML
 - [ ] Interakcja Plansza<->Użytkownik
 - [ ] Napisanie algorytmu, który może podejmować decyzje w ramach klasy Gracz

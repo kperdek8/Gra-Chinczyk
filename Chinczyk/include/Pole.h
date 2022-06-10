@@ -30,8 +30,6 @@ class Pole
         Pionek* wskPionek;
         Pole *wskPoprzedni;
         Pole *wskKolejny;
-
-        //Funkcja informujaca Plansze o nacisnieciu pola
 };
 
 #endif // POLE_H

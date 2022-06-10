@@ -12,6 +12,7 @@ class Pionek
         Pionek(Kolor aKolorPionka, Pole* aWskPole);
         ~Pionek();
         void postawPionek(Pole* pole);
+        Kolor zwrocKolor() {return kolorPionka;}
         Pole* gdzieStoje() { return wskPole; }
 
     private:

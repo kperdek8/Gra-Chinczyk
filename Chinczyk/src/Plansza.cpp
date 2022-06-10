@@ -2,7 +2,6 @@
 
 #include <string>
 #include <stdlib.h>
-#include <iostream>
 /*
 
 Uklad planszy 11x11 wzorowany na obrazku Plansza.png, ktory znajduje sie w folderze projektu
@@ -24,6 +23,8 @@ Plansza::Plansza()
 {
     okno = new sf::RenderWindow(sf::VideoMode(800,600),"Chinczyk");
     okno->setFramerateLimit(60);
+
+    zaktualizujKosc(1);
 
     polaStartowe.resize(4);
     schowki.resize(4);
@@ -267,9 +268,18 @@ Plansza::~Plansza()
     {
         delete pola.at(i);
     }
+
+    for(size_t i = 0; i<pionki.size(); i++)
+    {
+        for(size_t k = 0; k<pionki.at(i).size(); k++)
+        delete pionki.at(i).at(k);
+    }
 }
 
-
+void Plansza::zaktualizujKosc(int rzut)
+{
+    SFMLSupport::przygotujRysunekKosci(okno,&kosc,teksturaKosci,rzut);
+}
 
 void Plansza::wyswietlPlansze()
 {
@@ -286,9 +296,22 @@ void Plansza::wyswietlPlansze()
             sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
             okno->setView(sf::View(visibleArea));
         }
-    }
+        else if(event.type == sf::Event::MouseButtonPressed)
+        {
+            float x = event.mouseButton.x;
+            float y = event.mouseButton.y;
 
-    std::cout<<"Rozmiar okna: "<<okno->getSize().x<<" "<<okno->getSize().y<<std::endl;
+            for(size_t i = 0; i<pola.size(); i++) //Sprawdzanie pol
+                if(SFMLSupport::czyKliknieto(okno,x,y,pola[i]->x,pola[i]->y))
+                    {
+                        //
+                    }
+            if(SFMLSupport::czyKliknieto(okno,x,y,kosc))
+            {
+                std::cout<<"Rzut"<<std::endl;
+            }
+        }
+    }
 
     for(size_t i = 0; i<pola.size(); i++)
     {
@@ -298,9 +321,14 @@ void Plansza::wyswietlPlansze()
 
         if(pola[i]->wskPionek != nullptr)
         {
-
+            sf::CircleShape rysunek2;
+            SFMLSupport::przygotujRysunekPionka(okno,&rysunek2,pola[i]->wskPionek);
+            okno->draw(rysunek2);
         }
     }
+
+    SFMLSupport::przygotujRysunekKosci(okno,&kosc,teksturaKosci);
+    okno->draw(kosc);
     okno->display();
 }
 

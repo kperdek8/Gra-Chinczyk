@@ -16,10 +16,8 @@ class Plansza
         Plansza();
         ~Plansza();
         //wersja konsolowa
-        void wyswietlRzut(int rzut);
+        void zaktualizujKosc(int rzut);
         void wyswietlPlansze();
-        void narysujPlansze();
-        void wyczyscPlansze();
         void wyswietlKomunikat(std::string komunikat, bool czyCzekac = true);
 
         Pionek* zwrocPionek(Kolor kolorGracza, int indeksPionka);
@@ -28,6 +26,8 @@ class Plansza
 
     private:
         sf::RenderWindow* okno;
+        sf::Sprite kosc;
+        sf::Texture teksturaKosci;
         std::vector<std::string> obrazPlanszy; //Wersja konsolowa
         std::vector<std::vector<Pionek*>> pionki; //Pierwsza wspolrzedna odpowiada za kolor gracza, a druga indeksy pionkow nalezacych do danego gracza
         std::vector<Pole*> pola;
