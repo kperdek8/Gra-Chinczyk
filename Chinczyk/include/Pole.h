@@ -2,6 +2,7 @@
 #define POLE_H
 
 #include "Kolor.h"
+#include <SFML/Graphics.hpp>
 
 class Pionek;
 
@@ -11,8 +12,13 @@ class Pole
         Pole();
         Pole(int aX, int aY,Kolor aKolorPola=brak, Pole * aWskPoprzedni = nullptr, Pole * aWskKolejny = nullptr);
         ~Pole();
+
         void postawPionek(Pionek* wsk);
         void zdejmijPionek();
+
+        int zwrocX() {return x;}
+        int zwrocY() {return y;}
+        Kolor zwrocKolor() {return kolorPola;}
         Pole* nastepnePole() { return wskKolejny;}
         Pole* poprzedniePole() { return wskPoprzedni;}
 

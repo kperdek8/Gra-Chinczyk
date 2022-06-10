@@ -22,7 +22,8 @@ yy  y##  gg
 
 Plansza::Plansza()
 {
-    okno = new sf::Window(sf::VideoMode(800,600),"Chinczyk",sf::Style::Close);
+    okno = new sf::RenderWindow(sf::VideoMode(800,600),"Chinczyk");
+    okno->setFramerateLimit(60);
 
     polaStartowe.resize(4);
     schowki.resize(4);
@@ -268,85 +269,39 @@ Plansza::~Plansza()
     }
 }
 
-char przypiszKolor(Kolor kolorPola)
-{
-    switch(kolorPola)
-    {
-    case Kolor::brak:
-        return '#';
-        break;
 
-    case Kolor::niebieski:
-        return 'b';
-        break;
-
-    case Kolor::czerwony:
-        return 'r';
-        break;
-
-    case Kolor::zolty:
-        return 'y';
-        break;
-
-    case Kolor::zielony:
-        return 'g';
-        break;
-    }
-
-    return ' ';
-}
-
-void wyczyscEkran() //Tylko dla wersji konsolowej
-{
-    system ("cls||clear");
-}
-
-void Plansza::wyczyscPlansze()
-{
-    for(size_t i = 0; i<obrazPlanszy.size(); i++)
-    {
-        std::string pustaLinia = "           ";
-        obrazPlanszy.at(i) = pustaLinia;
-    }
-}
-
-void Plansza::narysujPlansze()
-{
-    unsigned int i = 0;
-
-    while(pola.begin()+i != pola.end())
-    {
-        if(pola.at(i)->wskPionek != nullptr)
-            obrazPlanszy[pola[i]->y][pola[i]->x] = przypiszKolor(pola.at(i)->wskPionek->kolorPionka);
-        else
-            obrazPlanszy[pola[i]->y][pola[i]->x] = przypiszKolor(pola[i]->kolorPola);
-        i++;
-    }
-}
-
-void Plansza::wyswietlKomunikat(std::string komunikat, bool czyCzekac)
-{
-    wyswietlPlansze();
-    std::cout<<komunikat<<std::endl;
-
-    if(czyCzekac)
-    {
-        std::cin.ignore();
-        std::cin.get(); //poczekaj na input od uzytkownika
-    }
-}
 
 void Plansza::wyswietlPlansze()
 {
-    wyczyscEkran();
-    wyczyscPlansze();
-    narysujPlansze();
 
-    for(size_t i = 0; i < obrazPlanszy.size(); i++)
+    okno->clear(sf::Color(212,179,127)); //Jasno-brazowy
+    sf::Event event;
+
+    while(okno->pollEvent(event))
     {
-        std::cout<<obrazPlanszy[i]<<std::endl;
+        if (event.type == sf::Event::Closed)
+            okno->close();
+        else if (event.type == sf::Event::Resized)
+        {
+            sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
+            okno->setView(sf::View(visibleArea));
+        }
     }
 
+    std::cout<<"Rozmiar okna: "<<okno->getSize().x<<" "<<okno->getSize().y<<std::endl;
+
+    for(size_t i = 0; i<pola.size(); i++)
+    {
+        sf::CircleShape rysunek;
+        SFMLSupport::przygotujRysunekPola(okno,&rysunek,pola[i]);
+        okno->draw(rysunek);
+
+        if(pola[i]->wskPionek != nullptr)
+        {
+
+        }
+    }
+    okno->display();
 }
 
 Pionek* Plansza::zwrocPionek(Kolor kolorGracza, int indeksPionka)

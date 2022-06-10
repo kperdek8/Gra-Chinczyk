@@ -54,12 +54,14 @@
 		<Unit filename="include/Pionek.h" />
 		<Unit filename="include/Plansza.h" />
 		<Unit filename="include/Pole.h" />
+		<Unit filename="include/SFMLSupport.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Gra.cpp" />
 		<Unit filename="src/Gracz.cpp" />
 		<Unit filename="src/Pionek.cpp" />
 		<Unit filename="src/Plansza.cpp" />
 		<Unit filename="src/Pole.cpp" />
+		<Unit filename="src/SFMLSupport.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

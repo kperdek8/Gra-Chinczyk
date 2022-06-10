@@ -107,24 +107,28 @@
 1654077053 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Pionek.h
 	"Kolor.h"
 
-1654093015 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Kolor.h
+1654695035 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Kolor.h
 	<iostream>
+	<SFML/Graphics.hpp>
 
-1654077053 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Pole.cpp
+1654694686 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Pole.cpp
 	"Pole.h"
 
-1654077053 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Pole.h
+1654698271 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Pole.h
 	"Kolor.h"
+	<SFML/Graphics.hpp>
 
-1654686008 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Plansza.cpp
+1654699054 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Plansza.cpp
 	"Plansza.h"
 	<string>
 	<stdlib.h>
 	<iostream>
 
-1654685832 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Plansza.h
+1654698406 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Plansza.h
 	"Pole.h"
 	"Pionek.h"
+	"SFMLSupport.h"
+	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<vector>
 	<string>
@@ -146,7 +150,7 @@
 
 1654077053 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Decyzja.h
 
-1654093838 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Gra.cpp
+1654697565 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Gra.cpp
 	"Gra.h"
 	<time.h>
 	<cstdlib>
@@ -576,4 +580,13 @@
 	<SFML/Config.hpp>
 
 1654679894 /usr/local/include/SFML/Window/WindowStyle.hpp
+
+1654698599 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/SFMLSupport.h
+	<SFML/Graphics.hpp>
+	<Kolor.h>
+	<Pole.h>
+	<Pionek.h>
+
+1654699311 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/SFMLSupport.cpp
+	"SFMLSupport.h"
 

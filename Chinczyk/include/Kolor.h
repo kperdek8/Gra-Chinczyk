@@ -2,6 +2,7 @@
 #define KOLOR_H
 
 #include <iostream>
+#include <SFML/Graphics.hpp>
 
 enum Kolor{niebieski=0, czerwony=1, zolty=2, zielony=3, brak=4};
 
