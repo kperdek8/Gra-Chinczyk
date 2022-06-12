@@ -77,7 +77,7 @@ void SFMLSupport::przygotujRysunekPola(sf::RenderWindow* okno, sf::CircleShape* 
     rysunek->setFillColor(zamienKolorNaSFML(pole->zwrocKolor()));
 }
 
-void SFMLSupport::przygotujRysunekPionka(sf::RenderWindow* okno, sf::CircleShape* rysunek, Pionek* pionek)
+void SFMLSupport::przygotujRysunekPionka(sf::RenderWindow* okno, sf::CircleShape* rysunek, Pionek* pionek, bool czyMoznaRuszyc)
 {
     //Roznice miedzy szerokoscia i wysokoscia okna sluzace do wysrodkowania planszy
     float xOffset = 0;
@@ -89,14 +89,17 @@ void SFMLSupport::przygotujRysunekPionka(sf::RenderWindow* okno, sf::CircleShape
         yOffset = (okno->getSize().y - okno->getSize().x);
 
     //Wspolrzedne sa wyliczone przy traktowaniu planszy jako kwadratu 11x11, wspolrzedne pionka sa dodatkowo przesuniete o 0.15 pola w celu wysrodkowania go do pola na ktorym stoi
-    float x = ((okno->getSize().x - xOffset) * (pionek->gdzieStoje()->zwrocX() + 0.15))/11.0;
-    float y = ((okno->getSize().y - yOffset) * (pionek->gdzieStoje()->zwrocY() + 0.15))/11.0;
+    float x = ((okno->getSize().x - xOffset) * (pionek->gdzieStoje()->zwrocX() + 0.135))/11.0;
+    float y = ((okno->getSize().y - yOffset) * (pionek->gdzieStoje()->zwrocY() + 0.135))/11.0;
     float r = (0.9*(okno->getSize().x - xOffset))/(11.0*2.0);
 
     rysunek->setRadius(0.7*r);
     rysunek->setPosition(x+(xOffset/2.0),y+(yOffset/2.0));
     rysunek->setOutlineThickness(2);
-    rysunek->setOutlineColor(sf::Color::Black);
+    if(czyMoznaRuszyc)
+        rysunek->setOutlineColor(sf::Color(169,169,169)); //Srebrny
+    else
+        rysunek->setOutlineColor(sf::Color::Black);
     rysunek->setFillColor(zamienKolorNaSFML(pionek->zwrocKolor()));
 }
 

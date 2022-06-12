@@ -19,8 +19,9 @@ yy  #y#  gg
 yy  y##  gg
 */
 
-Plansza::Plansza()
+Plansza::Plansza(Gra* aGra)
 {
+    gra = aGra;
     okno = new sf::RenderWindow(sf::VideoMode(800,600),"Chinczyk");
     okno->setFramerateLimit(60);
 
@@ -28,7 +29,6 @@ Plansza::Plansza()
 
     polaStartowe.resize(4);
     schowki.resize(4);
-    obrazPlanszy.resize(11);
     pionki.resize(4);
 
     Pole* pierwszyInit = nullptr; //Wskaznik sluzacy do polaczenia na koncu inicjalizacji pierwszego i ostatniego pola
@@ -255,6 +255,7 @@ Plansza::Plansza()
     for(size_t i = 0; i<pionki.size(); i++)
     {
         Pionek* pionek = pionki.at(i).at(0);
+        pionek->wystawPionek();
         pionek->postawPionek(polaStartowe.at(i));
         polaStartowe.at(i)->postawPionek(pionek);
     }
@@ -304,11 +305,11 @@ void Plansza::wyswietlPlansze()
             for(size_t i = 0; i<pola.size(); i++) //Sprawdzanie pol
                 if(SFMLSupport::czyKliknieto(okno,x,y,pola[i]->x,pola[i]->y))
                     {
-                        //
+                        gra->przesunPionek(pola[i]->wskPionek);
                     }
-            if(SFMLSupport::czyKliknieto(okno,x,y,kosc))
+            if(SFMLSupport::czyKliknieto(okno,x,y,kosc)) //Sprawdzanie kosci
             {
-                std::cout<<"Rzut"<<std::endl;
+                gra->rzucKoscia();
             }
         }
     }
@@ -322,7 +323,7 @@ void Plansza::wyswietlPlansze()
         if(pola[i]->wskPionek != nullptr)
         {
             sf::CircleShape rysunek2;
-            SFMLSupport::przygotujRysunekPionka(okno,&rysunek2,pola[i]->wskPionek);
+            SFMLSupport::przygotujRysunekPionka(okno,&rysunek2,pola[i]->wskPionek,gra->czyDozwolonyRuch(pola[i]->wskPionek));
             okno->draw(rysunek2);
         }
     }
@@ -330,6 +331,16 @@ void Plansza::wyswietlPlansze()
     SFMLSupport::przygotujRysunekKosci(okno,&kosc,teksturaKosci);
     okno->draw(kosc);
     okno->display();
+}
+
+Pole* Plansza::zwrocPoleStartowe(Kolor kolorGracza)
+{
+    return polaStartowe[kolorGracza];
+}
+
+std::vector<Pole*> Plansza::zwrocSchowek(Kolor kolorGracza)
+{
+    return schowki[kolorGracza];
 }
 
 Pionek* Plansza::zwrocPionek(Kolor kolorGracza, int indeksPionka)

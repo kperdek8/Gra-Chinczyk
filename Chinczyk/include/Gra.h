@@ -7,29 +7,39 @@
 
 #include <vector>
 
+class Plansza;
+
 class Gra
 {
     public:
         Gra();
         virtual ~Gra();
-        void przesunPionek(Pionek* pionek, int liczbaPol, int szybkoscAnimacji = 600);
+        void przesunPionek(Pionek* pionek);
         void zresetujPlansze();
         void petlaGry();
         void zaktualizujTure();
-        int rzucKoscia();
+        void rzucKoscia();
+        bool czyDozwolonyRuch(Pionek* Pionek);
 
     protected:
 
     private:
         Kolor czyjaTura;
+
+        const int DICE_ANIMATION_SPEED = 100; //ms
+        const int MOVE_ANIMATION_SPEED = 500;
+        int ostatniRzut;
+
+        bool czyPionekJestPrzesuwany;
         bool czyGraSkonczona;
+        bool czyRzuconoKoscia;
+        bool czyPodjetoDecyzje;
+        bool czyZrobilOkrazenie(Pionek* pionek);
 
         Plansza* planszaWsk;
         std::vector<Gracz*> gracze;
 
-        bool czyDozwolony();
-        bool czyGraSkonczylaSie();
-        bool czyZrobilOkrazenie();
+
 };
 
 #endif // GRA_H

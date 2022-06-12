@@ -15,7 +15,7 @@ class SFMLSupport
         static bool czyKliknieto(sf::RenderWindow* okno, float mouseX, float mouseY, sf::Sprite sprite);
         static bool czyKliknieto(sf::RenderWindow* okno, float mouseX, float mouseY, int x, int y);
         static void przygotujRysunekPola(sf::RenderWindow* okno, sf::CircleShape* rysunek,Pole* pole);
-        static void przygotujRysunekPionka(sf::RenderWindow* okno, sf::CircleShape* rysunek,Pionek* pionek);
+        static void przygotujRysunekPionka(sf::RenderWindow* okno, sf::CircleShape* rysunek,Pionek* pionek, bool czyMoznaRuszyc = false);
         static void przygotujRysunekKosci(sf::RenderWindow* okno, sf::Sprite* rysunek, sf::Texture &tekstura, int rzut = 0);
         static sf::Color zamienKolorNaSFML(Kolor kolor);
 };

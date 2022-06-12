@@ -5,9 +5,6 @@
 int main()
 {
     Gra gra;
-    gra.zresetujPlansze();
-    gra.petlaGry();
-
 
     return 0;
 }

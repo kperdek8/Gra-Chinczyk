@@ -66,9 +66,9 @@
 - [ ] Dodanie sekwencji startowej - wszystkie pionki startują w schowku, gracze rzucają trzy razy aż do wylosowania szóstki żeby wystawić pionek
 - [ ] Obsługa "domków" 
 - [ ] Obsługa wylosowania szóstki - możliwość wystawiania kolejnych pionków na planszę oraz sumowanie rzutów
-- [ ] Obsługa wyboru, którego pionka ruszyć
+- [x] Obsługa wyboru, którego pionka ruszyć
 - [ ] Obsługa zbijania pionków i blokada ruchu pionkiem, jeśli będzie skutkował staniem dwóch pionków tego samego koloru na tym samym polu
 - [ ] Obsługa trzykrotnego rzutu kością w przypadku, kiedy gracz nie ma wystawionych pionków na planszy
 - [x] Przerobienie klasy Plansza do SFML
-- [ ] Interakcja Plansza<->Użytkownik
-- [ ] Napisanie algorytmu, który może podejmować decyzje w ramach klasy Gracz
+- [x] Interakcja Plansza<->Użytkownik
+- [ ] Napisanie algorytmu AI, który może podejmować decyzje w ramach klasy Gracz

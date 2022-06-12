@@ -1,13 +1,8 @@
 #include "Pionek.h"
 
-Pionek::Pionek()
-{
-    kolorPionka = niebieski;
-    wskPole = nullptr;
-}
-
 Pionek::Pionek(Kolor aKolorPionka, Pole* aWskPole)
 {
+    wystawiony = false;
     kolorPionka = aKolorPionka;
     wskPole = aWskPole;
 }
@@ -15,6 +10,16 @@ Pionek::Pionek(Kolor aKolorPionka, Pole* aWskPole)
 Pionek::~Pionek()
 {
     //dtor
+}
+
+void Pionek::zbijPionek()
+{
+    wystawiony = false;
+}
+
+void Pionek::wystawPionek()
+{
+    wystawiony = true;
 }
 
 void Pionek::postawPionek(Pole* pole)

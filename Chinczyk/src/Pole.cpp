@@ -19,11 +19,6 @@ Pole::Pole(int aX, int aY, Kolor aKolorPola, Pole * aWskPoprzedni, Pole * aWskKo
     wskPionek=nullptr;
 }
 
-Pole::~Pole()
-{
-    //dtor
-}
-
 void Pole::postawPionek(Pionek* wsk)
 {
     wskPionek = wsk;
