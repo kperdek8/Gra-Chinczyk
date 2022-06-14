@@ -10,7 +10,7 @@ class Pole
 {
     public:
         Pole();
-        Pole(int aX, int aY,Kolor aKolorPola=brak, Pole * aWskPoprzedni = nullptr, Pole * aWskKolejny = nullptr);
+        Pole(int aX, int aY,Kolor aKolorPola=brak, Pole* aWskPoprzedni = nullptr, Pole* aWskKolejny = nullptr);
 
         void postawPionek(Pionek* wsk);
         void zdejmijPionek();

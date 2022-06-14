@@ -28,6 +28,7 @@ Plansza::Plansza(Gra* aGra)
     zaktualizujKosc(1);
 
     polaStartowe.resize(4);
+    domki.resize(4);
     schowki.resize(4);
     pionki.resize(4);
 
@@ -99,24 +100,28 @@ Plansza::Plansza(Gra* aGra)
     {
         pole = new Pole(5,i,niebieski);
         pola.push_back(pole);
+        domki.at(niebieski).push_back(pole);
     }
 
     for(int i=6; i<=9; i++) //Domek zoltego
     {
         pole = new Pole(5,i,zolty);
         pola.push_back(pole);
+        domki.at(zolty).push_back(pole);
     }
 
     for(int i=1; i<=4; i++) //Domek czerwonego
     {
         pole = new Pole(i,5,czerwony);
         pola.push_back(pole);
+        domki.at(czerwony).push_back(pole);
     }
 
     for(int i=6; i<=9; i++) //Domek zielonego
     {
         pole = new Pole(i,5,zielony);
         pola.push_back(pole);
+        domki.at(zielony).push_back(pole);
     }
 
     //Dalej nastepuje inicjalizacja reszty pól (których nie da sie pogrupowac w schludny sposob)
@@ -251,14 +256,16 @@ Plansza::Plansza(Gra* aGra)
     pierwszyInit->wskPoprzedni = pole; //Laczenie ostatniego i pierwsze pola
 
     //Do testowania, postawienie jednego pionka kazdego gracza na polu startowym
-
+    /*
     for(size_t i = 0; i<pionki.size(); i++)
     {
         Pionek* pionek = pionki.at(i).at(0);
-        pionek->wystawPionek();
+        pionek->aktywuj();
+        pionek->gdzieStoje()->zdejmijPionek();
         pionek->postawPionek(polaStartowe.at(i));
         polaStartowe.at(i)->postawPionek(pionek);
     }
+    */
 }
 
 Plansza::~Plansza()
@@ -280,6 +287,21 @@ Plansza::~Plansza()
 void Plansza::zaktualizujKosc(int rzut)
 {
     SFMLSupport::przygotujRysunekKosci(okno,&kosc,teksturaKosci,rzut);
+}
+
+void Plansza::wyswietlResetGry(Kolor ktoWygral)
+{
+    okno->clear(sf::Color(212,179,127)); //Jasno-brazowy
+    switch(SFMLSupport::oknoResetuGry(okno,ktoWygral))
+    {
+        case 1:
+            gra->zresetujPlansze();
+            break;
+        case -1:
+            okno->close();
+            break;
+    }
+    okno->display();
 }
 
 void Plansza::wyswietlPlansze()
@@ -305,7 +327,8 @@ void Plansza::wyswietlPlansze()
             for(size_t i = 0; i<pola.size(); i++) //Sprawdzanie pol
                 if(SFMLSupport::czyKliknieto(okno,x,y,pola[i]->x,pola[i]->y))
                     {
-                        gra->przesunPionek(pola[i]->wskPionek);
+                        if(pola[i]->zwrocPionek() != nullptr)
+                            gra->przesunPionek(pola[i]->wskPionek);
                     }
             if(SFMLSupport::czyKliknieto(okno,x,y,kosc)) //Sprawdzanie kosci
             {
@@ -333,6 +356,25 @@ void Plansza::wyswietlPlansze()
     okno->display();
 }
 
+void Plansza::zmienNazweOkna(Kolor kolorGracza)
+{
+    switch(kolorGracza)
+    {
+        case niebieski:
+            okno->setTitle("Chinczyk [Tura Niebieskiego]");
+            break;
+        case czerwony:
+            okno->setTitle("Chinczyk [Tura Czerwonego]");
+            break;
+        case zielony:
+            okno->setTitle("Chinczyk [Tura Zielonego]");
+            break;
+        case zolty:
+            okno->setTitle("Chinczyk [Tura Zoltego]");
+            break;
+    }
+}
+
 Pole* Plansza::zwrocPoleStartowe(Kolor kolorGracza)
 {
     return polaStartowe[kolorGracza];
@@ -341,6 +383,11 @@ Pole* Plansza::zwrocPoleStartowe(Kolor kolorGracza)
 std::vector<Pole*> Plansza::zwrocSchowek(Kolor kolorGracza)
 {
     return schowki[kolorGracza];
+}
+
+std::vector<Pole*> Plansza::zwrocDomek(Kolor kolorGracza)
+{
+    return domki[kolorGracza];
 }
 
 Pionek* Plansza::zwrocPionek(Kolor kolorGracza, int indeksPionka)

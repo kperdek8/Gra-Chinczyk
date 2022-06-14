@@ -3,9 +3,9 @@
 ## Zasady gry
 * Gra przeznaczona dla 2-4 graczy
 * Każdy gracz ma swój schowek, znajdujący się poza planszą i zawierający cztery pionki oraz "domek", do którego trafiają pionki, którym udało się okrążyć planszę.
-* Na początku gracze rzucają po kolei trzy razy kością do momentu wyrzucenia liczby 6 - wtedy przesuwają jeden z swoich pionków z schowka na pole startowe, rzucają kością jeszcze raz i przesuwają pionek o tyle pól ile wylosowali na kostce.
+* Na początku gracze rzucają po kolei trzy razy kością do momentu wyrzucenia liczby 6 - wtedy przesuwają jeden z swoich pionków z schowka na pole startowe.
 * Następnie gracze rzucają w ustalonej kolejności kością jeden raz, a następnie przesuwają pionek o liczbę pól równej wylosowanej liczbie oczek. W przypadku, gdy na planszy znajduje się kilka pionków jednego gracza, to wybiera którym pionkiem chce się ruszyć
-* W przypadku wyrzucenia liczby 6, gracz ma możliwość prowadzenia kolejnego pionka do gry lub rzucenia kością jeszcze raz i przesunięcia jednego pionka o sumę wszystkich rzutów. Możliwe jest rzucenie kością maksymalnie trzy razy w przypadku wyrzucenia liczby 6 dwa razy pod rząd, lecz za trzecim wystąpieniem szóstki tura się kończy.
+* W przypadku wyrzucenia liczby 6, gracz ma możliwość prowadzenia kolejnego pionka do gry lub rzucenia kością jeszcze raz i przesunięcia jednego pionka o sumę wszystkich rzutów. W przypadku wystapienia szostki drugi raz, gracz nie otrzymuje kolejnego rzutu.
 * Pionki mogą nad sobą przeskakiwać
 * Jeśli podczas gry pionek jednego gracza stanie na polu zajmowanym przez drugiego, pomijając pole startowe, pionek stojący tutaj poprzednio zostaje zbity i wraca do swojego schowka.
 * Jeżeli po ruchu pionek stanąłby na polu zajmowanym przez innego pionka tego samego koloru, to ruch jest niedozwolony i gracz musi wykonać ruch innym pionkiem.
@@ -61,14 +61,12 @@
 - [x] Klasa Plansza (najpierw w wersji konsolowej), klasa Pole
 - [x] Klasa Pionek i algorytm przesuwania pionka (z pionkiem zaczynającym od razu na planszy)
 - [x] Klasa Gra i przeniesienie algorytmu przesuwania pionka do niej
-- [x] Klasa Gracz, implementacja petli gry oraz komunikacji Gra<->Gracz 
-- [x] Obsluga wielu graczy (pionki różnych kolorów oraz komunikacja klasy Gry z każdym z graczy osobno)
-- [ ] Dodanie sekwencji startowej - wszystkie pionki startują w schowku, gracze rzucają trzy razy aż do wylosowania szóstki żeby wystawić pionek
-- [ ] Obsługa "domków" 
-- [ ] Obsługa wylosowania szóstki - możliwość wystawiania kolejnych pionków na planszę oraz sumowanie rzutów
-- [x] Obsługa wyboru, którego pionka ruszyć
-- [ ] Obsługa zbijania pionków i blokada ruchu pionkiem, jeśli będzie skutkował staniem dwóch pionków tego samego koloru na tym samym polu
-- [ ] Obsługa trzykrotnego rzutu kością w przypadku, kiedy gracz nie ma wystawionych pionków na planszy
+- [x] Dodanie obslugi tur w klasie Gra
 - [x] Przerobienie klasy Plansza do SFML
 - [x] Interakcja Plansza<->Użytkownik
+- [x] Obsługa wyboru, którego pionka ruszyć
+- [x] Obsługa wylosowania szóstki - możliwość wystawiania kolejnych pionków na planszę oraz sumowanie rzutów
+- [x] Obsługa "domków" 
+- [x] Obsługa zbijania pionków i blokada ruchu pionkiem, jeśli będzie skutkował staniem dwóch pionków tego samego koloru na tym samym polu
+- [x] Obsługa trzykrotnego rzutu kością w przypadku, kiedy gracz nie ma wystawionych pionków na planszy
 - [ ] Napisanie algorytmu AI, który może podejmować decyzje w ramach klasy Gracz

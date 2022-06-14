@@ -18,6 +18,18 @@ sf::Color SFMLSupport::zamienKolorNaSFML(Kolor kolor)
     }
 }
 
+bool SFMLSupport::czyKliknieto(sf::RenderWindow* okno, float mouseX, float mouseY, sf::Text text)
+{
+    if(mouseX >= text.getGlobalBounds().left && mouseX <= text.getGlobalBounds().left + text.getGlobalBounds().width)
+    {
+        if(mouseY >= text.getGlobalBounds().top && mouseY <= text.getGlobalBounds().top + text.getGlobalBounds().height)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 bool SFMLSupport::czyKliknieto(sf::RenderWindow* okno, float mouseX, float mouseY, sf::Sprite sprite)
 {
     if(mouseX >= sprite.getGlobalBounds().left && mouseX <= sprite.getGlobalBounds().left + sprite.getGlobalBounds().width)
@@ -52,6 +64,86 @@ bool SFMLSupport::czyKliknieto(sf::RenderWindow* okno, float mouseX, float mouse
         }
     }
     return false;
+}
+
+int SFMLSupport::oknoResetuGry(sf::RenderWindow* okno, Kolor ktoWygral)
+{
+    const float BIG_SCALE = 0.1;
+    const float SMALL_SCALE = 0.8*BIG_SCALE;
+    const float INTERVAL = 0.11;
+    const float POSITION = 0.0;
+
+    sf::Event event;
+
+    sf::Font font;
+    font.loadFromFile("res/arial.ttf");
+    sf::Text ogloszenieZwyciezcy("",font);
+
+    switch(ktoWygral)
+    {
+        case niebieski:
+            ogloszenieZwyciezcy.setString("Wygral niebieski!");
+            break;
+        case czerwony:
+            ogloszenieZwyciezcy.setString("Wygral czerwony!");
+            break;
+        case zielony:
+            ogloszenieZwyciezcy.setString("Wygral zielony!");
+            break;
+        case zolty:
+            ogloszenieZwyciezcy.setString("Wygral zolty!");
+            break;
+    }
+
+    sf::Text zapytanie("Czy zaczac nastepna gre?",font);
+    sf::Text tak("TAK",font);
+    sf::Text nie("NIE",font);
+
+    ogloszenieZwyciezcy.setCharacterSize(okno->getSize().y*BIG_SCALE);
+    zapytanie.setCharacterSize(okno->getSize().y*BIG_SCALE);
+    tak.setCharacterSize(okno->getSize().y*SMALL_SCALE);
+    nie.setCharacterSize(okno->getSize().y*SMALL_SCALE);
+
+    ogloszenieZwyciezcy.setPosition((okno->getSize().x - ogloszenieZwyciezcy.getGlobalBounds().width)/2,POSITION);
+    zapytanie.setPosition((okno->getSize().x - zapytanie.getGlobalBounds().width)/2,POSITION+okno->getSize().y*INTERVAL);
+    tak.setPosition((okno->getSize().x/2) - 2*tak.getGlobalBounds().width,POSITION+okno->getSize().y*INTERVAL*3);
+    nie.setPosition((okno->getSize().x/2) + nie.getGlobalBounds().width,okno->getSize().y*INTERVAL*3);
+
+    ogloszenieZwyciezcy.setColor(sf::Color::Black);
+    zapytanie.setColor(sf::Color::Black);
+    tak.setColor(sf::Color::Black);
+    nie.setColor(sf::Color::Black);
+
+    okno->draw(ogloszenieZwyciezcy);
+    okno->draw(zapytanie);
+    okno->draw(tak);
+    okno->draw(nie);
+
+    while(okno->pollEvent(event))
+    {
+        if (event.type == sf::Event::Closed)
+            okno->close();
+        else if (event.type == sf::Event::Resized)
+        {
+            sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
+            okno->setView(sf::View(visibleArea));
+        }
+        else if (event.type == sf::Event::MouseButtonPressed)
+        {
+            if(czyKliknieto(okno,event.mouseButton.x,event.mouseButton.y,tak))
+            {
+                return 1;
+            }
+
+            else if(czyKliknieto(okno,event.mouseButton.x,event.mouseButton.y,nie))
+            {
+                return -1;
+            }
+        }
+    }
+
+    return 0;
+
 }
 
 void SFMLSupport::przygotujRysunekPola(sf::RenderWindow* okno, sf::CircleShape* rysunek, Pole* pole)
@@ -122,22 +214,22 @@ void SFMLSupport::przygotujRysunekKosci(sf::RenderWindow* okno, sf::Sprite* rysu
         switch(rzut)
         {
         case 1:
-            tekstura.loadFromFile("sprites/kosc-jeden.png");
+            tekstura.loadFromFile("res/kosc-jeden.png");
             break;
         case 2:
-            tekstura.loadFromFile("sprites/kosc-dwa.png");
+            tekstura.loadFromFile("res/kosc-dwa.png");
             break;
         case 3:
-            tekstura.loadFromFile("sprites/kosc-trzy.png");
+            tekstura.loadFromFile("res/kosc-trzy.png");
             break;
         case 4:
-            tekstura.loadFromFile("sprites/kosc-cztery.png");
+            tekstura.loadFromFile("res/kosc-cztery.png");
             break;
         case 5:
-            tekstura.loadFromFile("sprites/kosc-piec.png");
+            tekstura.loadFromFile("res/kosc-piec.png");
             break;
         case 6:
-            tekstura.loadFromFile("sprites/kosc-szesc.png");
+            tekstura.loadFromFile("res/kosc-szesc.png");
             break;
         }
     }

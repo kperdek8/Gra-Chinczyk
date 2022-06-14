@@ -11,18 +11,18 @@ class Pionek
         Pionek(Kolor aKolorPionka, Pole* aWskPole);
         ~Pionek();
 
-        void wystawPionek();
-        void zbijPionek();
+        void aktywuj();
+        void dezaktywuj();
         void postawPionek(Pole* pole);
 
-        bool czyWystawiony() {return wystawiony;}
+        bool czyAktywny() {return aktywny;}
         Kolor zwrocKolor() {return kolorPionka;}
         Pole* gdzieStoje() {return wskPole;}
 
     private:
         friend class Plansza;
 
-        bool wystawiony;
+        bool aktywny;
         Kolor kolorPionka;
         Pole* wskPole;
 

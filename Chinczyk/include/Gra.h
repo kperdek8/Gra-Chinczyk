@@ -3,7 +3,6 @@
 
 #include "Plansza.h"
 #include "Kolor.h"
-#include "Gracz.h"
 
 #include <vector>
 
@@ -15,30 +14,38 @@ class Gra
         Gra();
         virtual ~Gra();
         void przesunPionek(Pionek* pionek);
-        void zresetujPlansze();
-        void petlaGry();
-        void zaktualizujTure();
         void rzucKoscia();
         bool czyDozwolonyRuch(Pionek* Pionek);
+        void zresetujPlansze();
 
     protected:
 
     private:
-        Kolor czyjaTura;
+        Plansza* planszaWsk;
 
-        const int DICE_ANIMATION_SPEED = 100; //ms
-        const int MOVE_ANIMATION_SPEED = 500;
+        Kolor czyjaTura;
+        Kolor zwyciezca;
+
+        const int DICE_ANIMATION_SPEED = 60; //ms
+        const int MOVE_ANIMATION_SPEED = 400;
         int ostatniRzut;
+        int licznikRzutow;
 
         bool czyPionekJestPrzesuwany;
         bool czyGraSkonczona;
         bool czyRzuconoKoscia;
+        bool czyRzuconoDrugiRaz;
         bool czyPodjetoDecyzje;
+
         bool czyZrobilOkrazenie(Pionek* pionek);
-
-        Plansza* planszaWsk;
-        std::vector<Gracz*> gracze;
-
+        bool czyMaAktywnegoPionka(Kolor kolorGracza);
+        void czyGraSieSkonczyla();
+        void ustawRzut(); //Do testowania
+        void petlaGry();
+        void zresetujLicznik();
+        void zaktualizujTure();
+        void zbijPionek(Pionek* pionek);
+        void wprowadzDoDomku(Pionek* pionek);
 
 };
 

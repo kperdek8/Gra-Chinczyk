@@ -21,9 +21,13 @@ class Plansza
 
         void zaktualizujKosc(int rzut);
         void wyswietlPlansze();
+        void wyswietlResetGry(Kolor ktoWygral);
+        void zmienNazweOkna(Kolor kolorGracza); //Zmienia nazwe okna w zaleznosci od tego czyja jest tura
+
         Pionek* zwrocPionek(Kolor kolorGracza, int indeksPionka);
         Pole* zwrocPoleStartowe(Kolor kolorGracza);
         std::vector<Pole*> zwrocSchowek(Kolor kolorGracza);
+        std::vector<Pole*> zwrocDomek(Kolor kolorGracza);
 
     protected:
 
@@ -38,6 +42,7 @@ class Plansza
         std::vector<Pole*> pola;
         std::vector<Pole*> polaStartowe;
         std::vector<std::vector<Pole*>> schowki; //Pierwsza wspolrzedna odpowiada za kolor gracza, a druga indeksy poszczegolnych pol schowka nalezacych do danego gracza
+        std::vector<std::vector<Pole*>> domki;
 
 };
 

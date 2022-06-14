@@ -9,7 +9,7 @@
 			<Target title="Debug">
 				<Option output="bin/Debug/Chinczyk" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
-				<Option type="1" />
+				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-std=c++14" />
@@ -29,6 +29,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-std=c++14" />
@@ -47,23 +48,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="include/Decyzja.h" />
 		<Unit filename="include/Gra.h" />
-		<Unit filename="include/Gracz.h" />
 		<Unit filename="include/Kolor.h" />
 		<Unit filename="include/Pionek.h" />
 		<Unit filename="include/Plansza.h" />
 		<Unit filename="include/Pole.h" />
 		<Unit filename="include/SFMLSupport.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="sprites/kosc-cztery.png" />
-		<Unit filename="sprites/kosc-dwa.png" />
-		<Unit filename="sprites/kosc-jeden.png" />
-		<Unit filename="sprites/kosc-piec.png" />
-		<Unit filename="sprites/kosc-szesc.png" />
-		<Unit filename="sprites/kosc-trzy.png" />
+		<Unit filename="res/arial.ttf" />
+		<Unit filename="res/kosc-cztery.png" />
+		<Unit filename="res/kosc-dwa.png" />
+		<Unit filename="res/kosc-jeden.png" />
+		<Unit filename="res/kosc-piec.png" />
+		<Unit filename="res/kosc-szesc.png" />
+		<Unit filename="res/kosc-trzy.png" />
 		<Unit filename="src/Gra.cpp" />
-		<Unit filename="src/Gracz.cpp" />
 		<Unit filename="src/Pionek.cpp" />
 		<Unit filename="src/Plansza.cpp" />
 		<Unit filename="src/Pole.cpp" />

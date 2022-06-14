@@ -2,7 +2,7 @@
 
 Pionek::Pionek(Kolor aKolorPionka, Pole* aWskPole)
 {
-    wystawiony = false;
+    aktywny = false;
     kolorPionka = aKolorPionka;
     wskPole = aWskPole;
 }
@@ -12,14 +12,14 @@ Pionek::~Pionek()
     //dtor
 }
 
-void Pionek::zbijPionek()
+void Pionek::dezaktywuj()
 {
-    wystawiony = false;
+    aktywny = false;
 }
 
-void Pionek::wystawPionek()
+void Pionek::aktywuj()
 {
-    wystawiony = true;
+    aktywny= true;
 }
 
 void Pionek::postawPionek(Pole* pole)
