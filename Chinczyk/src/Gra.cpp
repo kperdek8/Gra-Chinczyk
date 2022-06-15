@@ -1,4 +1,5 @@
 #include "Gra.h"
+#include "ZbiorPol.h"
 #include <experimental/random>
 
 void poczekaj(int liczbaMs)
@@ -157,6 +158,11 @@ void Gra::przesunPionek(Pionek* pionek)
             if(czyZrobilOkrazenie(pionek))
             {
                 wprowadzDoDomku(pionek);
+                if(przechowanyPionek != nullptr)
+                {
+                    aktualnePolne->postawPionek(przechowanyPionek); //Postaw przechowany pionek z powrotem
+                    przechowanyPionek = nullptr;
+                }
                 break;
             }
             else
@@ -196,11 +202,9 @@ bool Gra::czyDozwolonyRuch(Pionek* pionek)
     }
     else if(!pionek->czyAktywny()) //Pionek w schowku lub domku
     {
-        for(size_t i = 0; i<planszaWsk->zwrocDomek(pionek->zwrocKolor()).size(); i++) //Nie sprawdzaj pionkow ktore znajduja sie w domku
-        {
-            if(planszaWsk->zwrocDomek(pionek->zwrocKolor()).at(i) == pionek->gdzieStoje())
-                return false;
-        }
+        //Nie sprawdzaj pionkow ktore znajduja sie w domku
+        if(planszaWsk->zwrocDomek(pionek->zwrocKolor()).czyZnajdujeSie(pionek))
+            return false;
 
         if(planszaWsk->zwrocPoleStartowe(czyjaTura)->zwrocPionek() != nullptr) //Pole startowe nie jest puste
             if(ostatniRzut == 6 && (planszaWsk->zwrocPoleStartowe(czyjaTura)->zwrocPionek()->zwrocKolor() != czyjaTura)) //Rzucono szesc i na polu startowym nie znajduje sie pionek tego samego koloru
@@ -249,53 +253,22 @@ bool Gra::czyMaAktywnegoPionka(Kolor kolorGracza)
 
 void Gra::wprowadzDoDomku(Pionek* pionek)
 {
-    std::vector<Pole*> kopiaDomku = planszaWsk->zwrocDomek(pionek->zwrocKolor());
-    Pole* poleDocelowe;
-
-    for(size_t i = kopiaDomku.size() - 1; i >= 0; i--)
-    {
-        if(kopiaDomku.at(i)->zwrocPionek()==nullptr)
-        {
-            poleDocelowe = kopiaDomku.at(i);
-            break;
-        }
-    }
-
-    pionek->postawPionek(poleDocelowe);
-    poleDocelowe->postawPionek(pionek);
-    pionek->dezaktywuj();
-
+    planszaWsk->zwrocDomek(pionek->zwrocKolor()).wstaw(pionek);
     czyGraSieSkonczyla();
 }
 
 void Gra::zbijPionek(Pionek* pionek)
 {
-    std::vector<Pole*> kopiaSchowka = planszaWsk->zwrocSchowek(pionek->zwrocKolor());
-    Pole* poleDocelowe = nullptr;
-
-    for(size_t i = 0; i < kopiaSchowka.size(); i++)
-    {
-        if(kopiaSchowka.at(i)->zwrocPionek()==nullptr)
-        {
-            poleDocelowe = kopiaSchowka.at(i);
-            break;
-        }
-    }
-
-    pionek->postawPionek(poleDocelowe);
-    poleDocelowe->postawPionek(pionek);
-    pionek->dezaktywuj();
+    planszaWsk->zwrocSchowek(pionek->zwrocKolor()).wstaw(pionek);
 }
 
 void Gra::czyGraSieSkonczyla()
 {
-    for(size_t i = 0; i < planszaWsk->zwrocDomek(czyjaTura).size(); i++)
+    if(planszaWsk->zwrocDomek(czyjaTura).czyPelne())
     {
-        if(planszaWsk->zwrocDomek(czyjaTura).at(i)->zwrocPionek() == nullptr)
-            return;
+        czyGraSkonczona = true;
+        zwyciezca = czyjaTura;
     }
-    czyGraSkonczona = true;
-    zwyciezca = czyjaTura;
 }
 
 void Gra::zresetujLicznik()

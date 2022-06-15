@@ -5,6 +5,7 @@
 #include "Pionek.h"
 #include "SFMLSupport.h"
 #include "Gra.h"
+#include "ZbiorPol.h"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -26,8 +27,8 @@ class Plansza
 
         Pionek* zwrocPionek(Kolor kolorGracza, int indeksPionka);
         Pole* zwrocPoleStartowe(Kolor kolorGracza);
-        std::vector<Pole*> zwrocSchowek(Kolor kolorGracza);
-        std::vector<Pole*> zwrocDomek(Kolor kolorGracza);
+        ZbiorPol zwrocSchowek(Kolor kolorGracza);
+        ZbiorPol zwrocDomek(Kolor kolorGracza);
 
     protected:
 
@@ -38,11 +39,12 @@ class Plansza
         sf::Sprite kosc;
         sf::Texture teksturaKosci;
 
+        std::vector<ZbiorPol> schowki;
+        std::vector<ZbiorPol> domki;
+
         std::vector<std::vector<Pionek*>> pionki; //Pierwsza wspolrzedna odpowiada za kolor gracza, a druga indeksy pionkow nalezacych do danego gracza
         std::vector<Pole*> pola;
         std::vector<Pole*> polaStartowe;
-        std::vector<std::vector<Pole*>> schowki; //Pierwsza wspolrzedna odpowiada za kolor gracza, a druga indeksy poszczegolnych pol schowka nalezacych do danego gracza
-        std::vector<std::vector<Pole*>> domki;
 
 };
 

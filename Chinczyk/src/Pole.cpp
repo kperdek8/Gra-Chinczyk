@@ -4,7 +4,7 @@ Pole::Pole()
 {
     x=0;
     y=0;
-    kolorPola=brak;
+    kolor=brak;
     wskKolejny=nullptr;
     wskPionek=nullptr;
 }
@@ -13,7 +13,7 @@ Pole::Pole(int aX, int aY, Kolor aKolorPola, Pole * aWskPoprzedni, Pole * aWskKo
 {
     x=aX;
     y=aY;
-    kolorPola = aKolorPola;
+    kolor = aKolorPola;
     wskPoprzedni=aWskPoprzedni;
     wskKolejny=aWskKolejny;
     wskPionek=nullptr;

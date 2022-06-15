@@ -6,7 +6,7 @@
 
 enum Kolor{niebieski=0, zielony=1, zolty=2, czerwony=3, brak=4};
 
-inline Kolor& operator++(Kolor& kolor)
+inline Kolor &operator++(Kolor& kolor)
 {
     if(kolor != 3)
         kolor = static_cast<Kolor>(kolor+1);

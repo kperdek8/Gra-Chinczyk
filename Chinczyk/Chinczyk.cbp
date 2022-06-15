@@ -48,12 +48,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/ElementGry.h" />
 		<Unit filename="include/Gra.h" />
 		<Unit filename="include/Kolor.h" />
 		<Unit filename="include/Pionek.h" />
 		<Unit filename="include/Plansza.h" />
 		<Unit filename="include/Pole.h" />
 		<Unit filename="include/SFMLSupport.h" />
+		<Unit filename="include/ZbiorPol.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="res/arial.ttf" />
 		<Unit filename="res/kosc-cztery.png" />
@@ -67,6 +69,7 @@
 		<Unit filename="src/Plansza.cpp" />
 		<Unit filename="src/Pole.cpp" />
 		<Unit filename="src/SFMLSupport.cpp" />
+		<Unit filename="src/ZbiorPol.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

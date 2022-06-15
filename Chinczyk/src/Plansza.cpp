@@ -41,8 +41,7 @@ Plansza::Plansza(Gra* aGra)
         {
             pole = new Pole(i,k,czerwony);
             pola.push_back(pole);
-            schowki.at(czerwony).push_back(pole);
-
+            schowki[czerwony]>>pole;
 
             Pionek* pionek = new Pionek(czerwony,pole);
             pionki.at(czerwony).push_back(pionek);
@@ -57,7 +56,7 @@ Plansza::Plansza(Gra* aGra)
         {
             pole = new Pole(i,k,niebieski);
             pola.push_back(pole);
-            schowki.at(niebieski).push_back(pole);
+            schowki[niebieski]>>pole;
 
             Pionek* pionek = new Pionek(niebieski,pole);
             pionki.at(niebieski).push_back(pionek);
@@ -72,7 +71,7 @@ Plansza::Plansza(Gra* aGra)
         {
             pole = new Pole(i,k,zolty);
             pola.push_back(pole);
-            schowki.at(zolty).push_back(pole);
+            schowki[zolty]>>pole;
 
             Pionek* pionek = new Pionek(zolty,pole);
             pionki.at(zolty).push_back(pionek);
@@ -87,7 +86,7 @@ Plansza::Plansza(Gra* aGra)
         {
             pole = new Pole(i,k,zielony);
             pola.push_back(pole);
-            schowki.at(zielony).push_back(pole);
+            schowki[zielony]>>pole;
 
             Pionek* pionek = new Pionek(zielony,pole);
             pionki.at(zielony).push_back(pionek);
@@ -100,28 +99,28 @@ Plansza::Plansza(Gra* aGra)
     {
         pole = new Pole(5,i,niebieski);
         pola.push_back(pole);
-        domki.at(niebieski).push_back(pole);
+        domki[niebieski]>>pole;
     }
 
-    for(int i=6; i<=9; i++) //Domek zoltego
+    for(int i=9; i>=6; i--) //Domek zoltego
     {
         pole = new Pole(5,i,zolty);
         pola.push_back(pole);
-        domki.at(zolty).push_back(pole);
+        domki[zolty]>>pole;
     }
 
     for(int i=1; i<=4; i++) //Domek czerwonego
     {
         pole = new Pole(i,5,czerwony);
         pola.push_back(pole);
-        domki.at(czerwony).push_back(pole);
+        domki[czerwony]>>pole;
     }
 
-    for(int i=6; i<=9; i++) //Domek zielonego
+    for(int i=9; i>=6; i--) //Domek zielonego
     {
         pole = new Pole(i,5,zielony);
         pola.push_back(pole);
-        domki.at(zielony).push_back(pole);
+        domki[zielony]>>pole;
     }
 
     //Dalej nastepuje inicjalizacja reszty pól (których nie da sie pogrupowac w schludny sposob)
@@ -255,17 +254,6 @@ Plansza::Plansza(Gra* aGra)
     poprzedInit->wskKolejny = pole;
     pierwszyInit->wskPoprzedni = pole; //Laczenie ostatniego i pierwsze pola
 
-    //Do testowania, postawienie jednego pionka kazdego gracza na polu startowym
-    /*
-    for(size_t i = 0; i<pionki.size(); i++)
-    {
-        Pionek* pionek = pionki.at(i).at(0);
-        pionek->aktywuj();
-        pionek->gdzieStoje()->zdejmijPionek();
-        pionek->postawPionek(polaStartowe.at(i));
-        polaStartowe.at(i)->postawPionek(pionek);
-    }
-    */
 }
 
 Plansza::~Plansza()
@@ -380,12 +368,12 @@ Pole* Plansza::zwrocPoleStartowe(Kolor kolorGracza)
     return polaStartowe[kolorGracza];
 }
 
-std::vector<Pole*> Plansza::zwrocSchowek(Kolor kolorGracza)
+ZbiorPol Plansza::zwrocSchowek(Kolor kolorGracza)
 {
     return schowki[kolorGracza];
 }
 
-std::vector<Pole*> Plansza::zwrocDomek(Kolor kolorGracza)
+ZbiorPol Plansza::zwrocDomek(Kolor kolorGracza)
 {
     return domki[kolorGracza];
 }

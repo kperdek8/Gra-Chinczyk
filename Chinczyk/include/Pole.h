@@ -1,12 +1,13 @@
 #ifndef POLE_H
 #define POLE_H
 
+#include "ElementGry.h"
 #include "Kolor.h"
 #include <SFML/Graphics.hpp>
 
 class Pionek;
 
-class Pole
+class Pole : public ElementGry
 {
     public:
         Pole();
@@ -18,7 +19,6 @@ class Pole
         int zwrocX() {return x;}
         int zwrocY() {return y;}
 
-        Kolor zwrocKolor() {return kolorPola;}
         Pionek* zwrocPionek() {return wskPionek;}
         Pole* nastepnePole() { return wskKolejny;}
         Pole* poprzedniePole() { return wskPoprzedni;}
@@ -27,7 +27,6 @@ class Pole
         friend class Plansza;
         int x;
         int y;
-        Kolor kolorPola;
         Pionek* wskPionek;
         Pole *wskPoprzedni;
         Pole *wskKolejny;

@@ -3,13 +3,8 @@
 Pionek::Pionek(Kolor aKolorPionka, Pole* aWskPole)
 {
     aktywny = false;
-    kolorPionka = aKolorPionka;
+    kolor = aKolorPionka;
     wskPole = aWskPole;
-}
-
-Pionek::~Pionek()
-{
-    //dtor
 }
 
 void Pionek::dezaktywuj()
