@@ -13,6 +13,7 @@ class Gra
     public:
         Gra();
         virtual ~Gra();
+        void zakonczGre(){czyWyjscZGry = true;}
         void przesunPionek(Pionek* pionek);
         void rzucKoscia();
         bool czyDozwolonyRuch(Pionek* Pionek);
@@ -31,6 +32,7 @@ class Gra
         int ostatniRzut;
         int licznikRzutow;
 
+        bool czyWyjscZGry;
         bool czyPionekJestPrzesuwany;
         bool czyGraSkonczona;
         bool czyRzuconoKoscia;

@@ -287,6 +287,7 @@ void Plansza::wyswietlResetGry(Kolor ktoWygral)
             break;
         case -1:
             okno->close();
+            gra->zakonczGre();
             break;
     }
     okno->display();
@@ -301,7 +302,10 @@ void Plansza::wyswietlPlansze()
     while(okno->pollEvent(event))
     {
         if (event.type == sf::Event::Closed)
+        {
             okno->close();
+            gra->zakonczGre();
+        }
         else if (event.type == sf::Event::Resized)
         {
             sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);

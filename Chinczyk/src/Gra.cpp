@@ -13,6 +13,7 @@ void poczekaj(int liczbaMs)
 
 Gra::Gra()
 {
+    czyWyjscZGry = false;
     planszaWsk = nullptr;
     zresetujPlansze();
 }
@@ -64,7 +65,7 @@ void Gra::petlaGry() //Petla gry
 {
     planszaWsk->zmienNazweOkna(czyjaTura);
 
-    while(czyGraSkonczona != true)
+    while(czyGraSkonczona != true && !czyWyjscZGry)
     {
         planszaWsk->wyswietlPlansze();
         if (czyPodjetoDecyzje)  //Oczekiwanie na przekazanie prawidlowego ruchu przez plansze do innych funkcji
@@ -77,7 +78,7 @@ void Gra::petlaGry() //Petla gry
     }
 
 
-    while(czyGraSkonczona == true)
+    while(czyGraSkonczona == true && !czyWyjscZGry)
     {
         planszaWsk->wyswietlResetGry(zwyciezca);
     }
