@@ -45,7 +45,6 @@ class Gra
         bool czyZrobilOkrazenie(Pionek* pionek);
         bool czyMaAktywnegoPionka(Kolor kolorGracza);
         void czyGraSieSkonczyla();
-        void ustawRzut(); //Do testowania
         void petlaGry();
         void zresetujLicznik();
         void zaktualizujTure();

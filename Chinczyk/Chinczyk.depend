@@ -1180,7 +1180,7 @@
 	<random>
 	<vector>
 
-1655284402 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Plansza.h
+1655842791 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Plansza.h
 	"Pole.h"
 	"Pionek.h"
 	"SFMLSupport.h"
@@ -1191,7 +1191,7 @@
 	<vector>
 	<string>
 
-1655838510 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Pole.h
+1655839877 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Pole.h
 	"ElementGry.h"
 	"Kolor.h"
 	<SFML/Graphics.hpp>
@@ -1613,7 +1613,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1655838510 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Pionek.h
+1655839846 /home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/include/Pionek.h
 	"ElementGry.h"
 	"Kolor.h"
 
@@ -1632,7 +1632,7 @@
 1655838772 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/ElementGry.cpp
 	"ElementGry.h"
 
-1655838510 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Gra.cpp
+1655839182 source:/home/krzysztof/Projekty/Programowanie Obiektowe/Gra-Chinczyk/Chinczyk/src/Gra.cpp
 	"Gra.h"
 	"ZbiorPol.h"
 	"SFMLSupport.h"

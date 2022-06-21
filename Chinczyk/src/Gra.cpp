@@ -277,15 +277,3 @@ void Gra::zresetujLicznik()
 {
     licznikRzutow = 1;
 }
-
-void Gra::ustawRzut()
-{
-    int input;
-
-    std::cout<<"Wprowadz nowy rzut"<<std::endl;
-
-    while(input<1 || input > 99)
-        std::cin>>input;
-
-    ostatniRzut = input;
-}

@@ -16,7 +16,6 @@ class Pionek : public ElementGry
         void postawPionek(Pole* pole);
 
         void info();
-        void info(std::ostream &str);
 
         Kolor zwrocKolor() {return kolor;}
         bool czyAktywny() {return aktywny;}
@@ -24,6 +23,7 @@ class Pionek : public ElementGry
 
     private:
         friend class Plansza;
+        void info(std::ostream &str);
         Kolor kolor;
         bool aktywny;
         Pole* wskPole;
