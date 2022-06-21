@@ -7,6 +7,11 @@ ElementGry::ElementGry()
     uid = idCounter++;
 }
 
+ElementGry::~ElementGry()
+{
+
+}
+
 std::ostream &operator<< (std::ostream& str, ElementGry &elementGry)
 {
     elementGry.info(str);

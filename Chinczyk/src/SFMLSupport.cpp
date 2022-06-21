@@ -112,11 +112,6 @@ int SFMLSupport::oknoResetuGry(sf::RenderWindow* okno, Kolor ktoWygral)
     tak.setPosition((okno->getSize().x/2) - 2*tak.getGlobalBounds().width,POSITION+okno->getSize().y*INTERVAL*3);
     nie.setPosition((okno->getSize().x/2) + nie.getGlobalBounds().width,okno->getSize().y*INTERVAL*3);
 
-    ogloszenieZwyciezcy.setColor(sf::Color::Black);
-    zapytanie.setColor(sf::Color::Black);
-    tak.setColor(sf::Color::Black);
-    nie.setColor(sf::Color::Black);
-
     okno->draw(ogloszenieZwyciezcy);
     okno->draw(zapytanie);
     okno->draw(tak);

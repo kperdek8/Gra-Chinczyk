@@ -17,14 +17,12 @@
 					<Add option="-g" />
 					<Add directory="include" />
 					<Add directory="dependencies/SFML/include" />
-					<Add directory="usr/local/include/SFML/" />
 					<Add directory="Chinczyk/include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics-d" />
 					<Add library="sfml-window-d" />
 					<Add library="sfml-system-d" />
-					<Add directory="/usr/local/lib/SFML/" />
 					<Add directory="dependencies/SFML/lib" />
 				</Linker>
 			</Target>
@@ -39,7 +37,6 @@
 					<Add option="-std=c++14" />
 					<Add directory="include" />
 					<Add directory="dependencies/SFML/include" />
-					<Add directory="usr/local/include/SFML/" />
 					<Add directory="Chinczyk/include" />
 				</Compiler>
 				<Linker>
@@ -48,7 +45,6 @@
 					<Add library="sfml-window" />
 					<Add library="sfml-system" />
 					<Add directory="dependencies/SFML/lib" />
-					<Add directory="/usr/local/lib/SFML/" />
 				</Linker>
 			</Target>
 		</Build>
@@ -79,10 +75,6 @@
 		<Unit filename="src/Pole.cpp" />
 		<Unit filename="src/SFMLSupport.cpp" />
 		<Unit filename="src/ZbiorPol.cpp" />
-		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

@@ -19,14 +19,13 @@ class Gra
         void rzucKoscia();
         bool czyDozwolonyRuch(Pionek* Pionek);
         void zresetujPlansze();
-        int losuj(int from, int to);
-
-    protected:
 
     private:
         Plansza* planszaWsk;
 
-        std::mt19937 rng;
+        std::random_device random_device;
+        std::mt19937 random_engine{random_device()};
+        std::uniform_int_distribution<int> distribution{1, 6};
 
         Kolor czyjaTura;
         Kolor zwyciezca;

@@ -2,10 +2,6 @@
 #include "ZbiorPol.h"
 #include "SFMLSupport.h"
 
-int Gra::losuj(int from, int to){
-    return std::uniform_int_distribution<int>(from, to)(rng);
-}
-
 void poczekaj(int liczbaMs)
 {
     // Start zegara
@@ -39,7 +35,7 @@ void Gra::rzucKoscia()
 
     for(int i = 0; i<8; i++)
     {
-        rzut = losuj(1,6);
+        rzut = distribution(random_engine);
         planszaWsk->zaktualizujKosc(rzut);
         planszaWsk->wyswietlPlansze();
         poczekaj(DICE_ANIMATION_SPEED);

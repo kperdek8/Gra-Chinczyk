@@ -8,6 +8,7 @@ class ElementGry
 {
     public:
         ElementGry();
+        virtual ~ElementGry();
         virtual void info() = 0;
         int zwrocId();
         friend std::ostream& operator<< (std::ostream& str, ElementGry &elementGry);
