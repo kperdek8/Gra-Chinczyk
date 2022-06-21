@@ -4,6 +4,7 @@
 #include "Plansza.h"
 #include "Kolor.h"
 
+#include <random>
 #include <vector>
 
 class Plansza;
@@ -18,11 +19,14 @@ class Gra
         void rzucKoscia();
         bool czyDozwolonyRuch(Pionek* Pionek);
         void zresetujPlansze();
+        int losuj(int from, int to);
 
     protected:
 
     private:
         Plansza* planszaWsk;
+
+        std::mt19937 rng;
 
         Kolor czyjaTura;
         Kolor zwyciezca;

@@ -14,12 +14,17 @@ class Pionek : public ElementGry
         void aktywuj();
         void dezaktywuj();
         void postawPionek(Pole* pole);
+
+        void info();
+        void info(std::ostream &str);
+
+        Kolor zwrocKolor() {return kolor;}
         bool czyAktywny() {return aktywny;}
         Pole* gdzieStoje() {return wskPole;}
 
     private:
         friend class Plansza;
-
+        Kolor kolor;
         bool aktywny;
         Pole* wskPole;
 

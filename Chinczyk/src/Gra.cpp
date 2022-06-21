@@ -1,6 +1,10 @@
 #include "Gra.h"
 #include "ZbiorPol.h"
-#include <experimental/random>
+#include "SFMLSupport.h"
+
+int Gra::losuj(int from, int to){
+    return std::uniform_int_distribution<int>(from, to)(rng);
+}
 
 void poczekaj(int liczbaMs)
 {
@@ -35,7 +39,7 @@ void Gra::rzucKoscia()
 
     for(int i = 0; i<8; i++)
     {
-        rzut = std::experimental::randint(1,6);
+        rzut = losuj(1,6);
         planszaWsk->zaktualizujKosc(rzut);
         planszaWsk->wyswietlPlansze();
         poczekaj(DICE_ANIMATION_SPEED);
@@ -87,6 +91,7 @@ void Gra::petlaGry() //Petla gry
 void Gra::zaktualizujTure()
 {
     ++czyjaTura;
+    SFMLSupport::przesunKosc(czyjaTura);
     planszaWsk->zmienNazweOkna(czyjaTura);
 }
 

@@ -1,11 +1,19 @@
 #include "ElementGry.h"
 
+int ElementGry::idCounter = 0;
+
 ElementGry::ElementGry()
 {
-    //ctor
+    uid = idCounter++;
 }
 
-ElementGry::~ElementGry()
+std::ostream &operator<< (std::ostream& str, ElementGry &elementGry)
 {
-    //dtor
+    elementGry.info(str);
+    return str;
+}
+
+int ElementGry::zwrocId()
+{
+    return uid;
 }

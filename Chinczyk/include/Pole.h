@@ -16,8 +16,12 @@ class Pole : public ElementGry
         void postawPionek(Pionek* wsk);
         void zdejmijPionek();
 
+        Kolor zwrocKolor() {return kolor;}
         int zwrocX() {return x;}
         int zwrocY() {return y;}
+
+        void info();
+        void info(std::ostream &str);
 
         Pionek* zwrocPionek() {return wskPionek;}
         Pole* nastepnePole() { return wskKolejny;}
@@ -25,6 +29,7 @@ class Pole : public ElementGry
 
     private:
         friend class Plansza;
+        Kolor kolor;
         int x;
         int y;
         Pionek* wskPionek;

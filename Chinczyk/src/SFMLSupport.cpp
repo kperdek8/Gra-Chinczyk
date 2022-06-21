@@ -1,6 +1,9 @@
 #include "SFMLSupport.h"
 #include <iostream>
 
+int SFMLSupport::dice_x_pos = 7;
+int SFMLSupport::dice_y_pos = 2;
+
 sf::Color SFMLSupport::zamienKolorNaSFML(Kolor kolor)
 {
     switch(kolor)
@@ -195,6 +198,29 @@ void SFMLSupport::przygotujRysunekPionka(sf::RenderWindow* okno, sf::CircleShape
     rysunek->setFillColor(zamienKolorNaSFML(pionek->zwrocKolor()));
 }
 
+void SFMLSupport::przesunKosc(Kolor kolor)
+{
+    switch(kolor)
+    {
+        case czerwony:
+            dice_x_pos = 2;
+            dice_y_pos = 2;
+            break;
+        case niebieski:
+            dice_x_pos = 7;
+            dice_y_pos = 2;
+            break;
+        case zielony:
+            dice_x_pos = 7;
+            dice_y_pos = 7;
+            break;
+        case zolty:
+            dice_x_pos = 2;
+            dice_y_pos = 7;
+            break;
+    }
+}
+
 void SFMLSupport::przygotujRysunekKosci(sf::RenderWindow* okno, sf::Sprite* rysunek, sf::Texture &tekstura, int rzut)
 {
     float xOffset = 0;
@@ -206,8 +232,8 @@ void SFMLSupport::przygotujRysunekKosci(sf::RenderWindow* okno, sf::Sprite* rysu
         yOffset = (okno->getSize().y - okno->getSize().x);
 
     //Wspolrzedne sa wyliczone przy traktowaniu planszy jako kwadratu 11x11
-    float x = ((okno->getSize().x - xOffset) * DICE_X_POS)/11.0;
-    float y = ((okno->getSize().y - yOffset) * DICE_Y_POS)/11.0;
+    float x = ((okno->getSize().x - xOffset) * dice_x_pos)/11.0;
+    float y = ((okno->getSize().y - yOffset) * dice_y_pos)/11.0;
 
     if(rzut >= 1 && rzut <= 6)
     {

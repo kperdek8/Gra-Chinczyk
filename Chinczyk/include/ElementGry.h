@@ -1,15 +1,21 @@
 #ifndef ELEMENTGRY_H
 #define ELEMENTGRY_H
 
-#include "Kolor.h"
+#include <iostream>
+#include <string>
 
 class ElementGry
 {
     public:
-        Kolor zwrocKolor() {return kolor;}
+        ElementGry();
+        virtual void info() = 0;
+        int zwrocId();
+        friend std::ostream& operator<< (std::ostream& str, ElementGry &elementGry);
 
     protected:
-        Kolor kolor;
+        static int idCounter;
+        int uid;
+        virtual void info(std::ostream& str) = 0;
 };
 
 #endif // ELEMENTGRY_H

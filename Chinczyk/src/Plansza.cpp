@@ -319,8 +319,14 @@ void Plansza::wyswietlPlansze()
             for(size_t i = 0; i<pola.size(); i++) //Sprawdzanie pol
                 if(SFMLSupport::czyKliknieto(okno,x,y,pola[i]->x,pola[i]->y))
                     {
+                        pola[i]->info();
+                        std::cout<<*pola[i]<<std::endl;;
                         if(pola[i]->zwrocPionek() != nullptr)
+                        {
+                            pola[i]->zwrocPionek()->info();
+                            std::cout<<*pola[i]->zwrocPionek()<<std::endl;
                             gra->przesunPionek(pola[i]->wskPionek);
+                        }
                     }
             if(SFMLSupport::czyKliknieto(okno,x,y,kosc)) //Sprawdzanie kosci
             {
